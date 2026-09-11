@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#7457f5" />
+    <meta name="description" content="Lumina: uma missão diária para iluminar o vocabulário." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+:root{--violet:#7457f5;--cyan:#32c7e8;--mint:#57d8ad;--coral:#ff6b68;--ink:#25223a;--muted:#77738d;--paper:#fbfaf7;--card:#fff;--gold:#f7bd3b;--shadow:0 18px 55px rgba(72,57,120,.13)}
+*{box-sizing:border-box}html{min-height:100%;background:var(--paper)}body{margin:0;min-height:100vh;color:var(--ink);font:400 16px/1.55 Poppins,system-ui,sans-serif;background:radial-gradient(circle at 10% 0%,#eee9ff 0,transparent 30%),radial-gradient(circle at 90% 95%,#dff9fb 0,transparent 30%),var(--paper)}button,input{font:inherit}.app-shell{width:min(100%,520px);min-height:100vh;margin:auto;padding:0 22px 32px}.topbar{height:78px;display:flex;align-items:center;justify-content:space-between}.brand{color:var(--ink);text-decoration:none;font-size:22px;font-weight:800}.brand-mark{display:inline-grid;place-items:center;width:36px;height:36px;margin-right:8px;color:white;border-radius:12px;background:linear-gradient(135deg,var(--violet),var(--cyan));box-shadow:0 8px 18px #7457f555}.icon-button{border:0;background:#fff;color:var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;box-shadow:0 5px 18px #51487916}.screen{display:none}.screen.active{display:block;animation:enter .4s ease}@keyframes enter{from{opacity:0;transform:translateY(8px)}}.welcome-copy{margin-top:20px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--violet)}h1,h2,p{margin-top:0}h1{font-size:clamp(28px,8vw,38px);line-height:1.17;margin:8px 0}h2{font-size:20px;line-height:1.3}.welcome-copy p,.streak-card p{color:var(--muted)}.streak-card{display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:#fff;margin:30px 0 22px;padding:24px 20px;border-radius:28px;box-shadow:var(--shadow)}.progress-ring{--progress:0deg;width:126px;height:126px;padding:10px;border-radius:50%;background:conic-gradient(var(--violet) var(--progress),#eeecf4 0)}.progress-center{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;background:#fff}.progress-center strong{font-size:36px;line-height:1}.progress-center span{font-size:11px;color:var(--muted)}.status-pill{display:inline-block;color:#ed765e;background:#fff0e8;padding:5px 9px;border-radius:9px;font-size:10px;font-weight:800;letter-spacing:.8px}.streak-card h2{margin:10px 0 5px}.streak-card p{font-size:12px;margin:0}.primary-button,.gold-button{width:100%;border:0;border-radius:17px;padding:17px 20px;color:white;background:linear-gradient(110deg,var(--violet),#9378ff);font-weight:700;display:flex;align-items:center;justify-content:center;gap:16px;cursor:pointer;box-shadow:0 10px 25px #7457f544}.primary-button b{font-size:22px}.primary-button:disabled{background:#bbb;box-shadow:none}.mission-meta{text-align:center;color:var(--muted);font-size:12px;margin:12px 0 28px}.mission-meta span{color:var(--violet)}.week-card{background:#fff;padding:22px;border-radius:24px}.section-heading{display:flex;justify-content:space-between;align-items:center}.section-heading h2{margin:4px 0}.section-heading>span{color:var(--violet);font-weight:800}.day-row{display:flex;justify-content:space-between;margin-top:16px}.day{display:grid;gap:6px;text-align:center;color:var(--muted);font-size:10px}.day b{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#f0eef5;color:#aaa;font-size:14px}.day.success b{background:#e4fbf2;color:#27ad7e}.day.today b{outline:2px solid var(--violet);outline-offset:2px}.study{min-height:calc(100vh - 90px)}.study-header{display:flex;gap:16px;align-items:center}.session-progress{flex:1}.session-progress>div:first-child{display:flex;justify-content:space-between;font-size:11px}.session-progress span{font-weight:700;color:var(--muted)}.progress-track{height:7px;background:#e9e6ef;border-radius:9px;margin-top:8px;overflow:hidden}.progress-track span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--violet),var(--cyan));transition:width .3s}.tap-hint{text-align:center;color:var(--muted);font-size:12px;margin:28px 0 14px}.flashcard{display:block;position:relative;width:100%;height:min(50vh,410px);border:0;background:transparent;transform-style:preserve-3d;transition:transform .55s;cursor:pointer;padding:0}.flashcard.flipped{transform:rotateY(180deg)}.card-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px;border-radius:28px;background:white;box-shadow:var(--shadow);backface-visibility:hidden;-webkit-backface-visibility:hidden}.card-front:after{content:"";position:absolute;inset:13px;border:1px solid #eeeafc;border-radius:21px}.card-front .sparkle{font-size:28px;color:var(--violet);margin-bottom:22px}.card-front strong{font-size:clamp(28px,9vw,42px);z-index:1}.card-front small{margin-top:22px;color:#aaa;font-size:10px;font-weight:700;letter-spacing:1.3px;z-index:1}.card-back{transform:rotateY(180deg);text-align:center}.card-back strong{font-size:26px;margin:8px}.card-back p{font-size:16px}.synonyms{color:var(--violet);font-weight:700;font-size:13px}.rating-panel{opacity:0;pointer-events:none;transition:opacity .3s;margin-top:18px;text-align:center}.rating-panel.visible{opacity:1;pointer-events:auto}.rating-panel>p{font-size:12px;color:var(--muted);margin-bottom:8px}.rating-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.rating{border:0;border-radius:16px;background:white;padding:12px 4px;box-shadow:0 6px 18px #4e426214;cursor:pointer}.rating b{display:grid;place-items:center;margin:auto;width:32px;height:32px;border-radius:50%;font-size:20px}.rating span{font-size:11px;font-weight:700}.wrong b{color:var(--coral);background:#fff0ef}.hard b{color:#dc9d24;background:#fff7de}.easy b{color:#27aa7d;background:#e6fbf3}.result,.reward{text-align:center;padding-top:16vh}.result-icon{display:grid;place-items:center;margin:0 auto 20px;width:95px;height:95px;border-radius:30px;background:linear-gradient(135deg,#eee9ff,#dcfaff);color:var(--violet);font-size:42px;transform:rotate(5deg)}.result>p{color:var(--muted)}.result-score{display:flex;flex-direction:column;background:#fff;border-radius:22px;padding:22px;margin:28px 0}.result-score strong{font-size:38px;color:var(--violet)}.result-score span{font-size:12px;color:var(--muted)}.gold-ticket{position:relative;background:linear-gradient(145deg,#fffdf4,#fff2b8);border:2px solid #f2ca62;border-radius:28px;padding:42px 25px;box-shadow:0 20px 60px #c9973044}.ticket-star{display:grid;place-items:center;margin:0 auto 20px;width:80px;height:80px;color:#fff;font-size:38px;border-radius:50%;background:linear-gradient(145deg,#ffd969,#e9a724);box-shadow:0 8px 25px #d89f3c66}.gold-ticket .eyebrow{color:#ad7918}.gold-ticket p{color:#786432}.gold-button{background:linear-gradient(110deg,#e0a62a,#f4c95b);color:#4d3810;box-shadow:0 10px 25px #d6a42b44}.confetti i{position:fixed;top:-20px;width:9px;height:18px;background:var(--c);left:var(--x);animation:fall var(--d) linear var(--delay) infinite;transform:rotate(var(--r))}@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}dialog{border:0;padding:0;background:transparent;max-width:calc(100% - 30px);width:430px}dialog::backdrop{background:#201b36aa;backdrop-filter:blur(4px)}.modal-card{position:relative;background:white;border-radius:26px;padding:30px;box-shadow:var(--shadow)}.modal-close{position:absolute;right:18px;top:16px;border:0;background:transparent;font-size:18px;cursor:pointer}.modal-card h2{font-size:24px;margin:5px 0 20px}.modal-card label{display:grid;gap:7px;margin:15px 0;color:var(--muted);font-size:12px;font-weight:600}.modal-card input{width:100%;border:1px solid #dedbe7;border-radius:13px;padding:13px;outline:0}.modal-card input:focus{border-color:var(--violet);box-shadow:0 0 0 3px #7457f522}.compact{margin-top:22px;padding:13px}.text-button{width:100%;border:0;background:transparent;color:var(--coral);margin-top:14px;font-size:12px;cursor:pointer}.pin-input{text-align:center;font-size:28px;letter-spacing:12px}.form-error{min-height:20px;color:var(--coral);font-size:12px}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);background:#29253c;color:white;border-radius:12px;padding:11px 18px;font-size:12px;opacity:0;pointer-events:none;transition:.3s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:390px){.app-shell{padding-inline:16px}.streak-card{grid-template-columns:110px 1fr;padding:20px 15px}.progress-ring{width:105px;height:105px}.card-face{padding:24px}.topbar{height:65px}.rating span{font-size:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.confetti{display:none}}
+
+    </style>
+    <title>Lumina</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Lumina — início"><span class="brand-mark">✦</span>Lumina</a>
+        <button class="icon-button" id="settingsButton" aria-label="Abrir configurações">⚙</button>
+      </header>
+
+      <main>
+        <section id="dashboardScreen" class="screen dashboard active" aria-labelledby="welcomeTitle">
+          <div class="welcome-copy">
+            <span class="eyebrow">SUA JORNADA DE PALAVRAS</span>
+            <h1 id="welcomeTitle">Olá, Bia! <span>☀️</span></h1>
+            <p>Pronta para iluminar sua mente hoje?</p>
+          </div>
+
+          <div class="streak-card">
+            <div class="progress-ring" id="progressRing" role="img" aria-label="0 de 5 dias concluídos">
+              <div class="progress-center"><strong id="streakNumber">0</strong><span>de 5 dias</span></div>
+            </div>
+            <div>
+              <span class="status-pill">🔥 CICLO ATUAL</span>
+              <h2 id="streakMessage">Sua luz começa hoje</h2>
+              <p id="streakHint">Complete 5 dias seguidos para liberar o Ticket Dourado.</p>
+            </div>
+          </div>
+
+          <button class="primary-button" id="startButton"><span>Iniciar Missão do Dia</span><b>→</b></button>
+          <p class="mission-meta"><span>✦</span> 21 palavras &nbsp;•&nbsp; aproximadamente 7 minutos</p>
+
+          <div class="week-card">
+            <div class="section-heading"><div><span class="eyebrow">SEU RITMO</span><h2>Últimos 5 dias</h2></div><span id="weekScore">0/5</span></div>
+            <div class="day-row" id="dayRow"></div>
+          </div>
+        </section>
+
+        <section id="studyScreen" class="screen study" aria-labelledby="studyWord">
+          <div class="study-header">
+            <button class="icon-button" id="closeStudy" aria-label="Sair da missão">✕</button>
+            <div class="session-progress"><div><span>MISSÃO DE HOJE</span><strong id="cardCount">1 de 21</strong></div><div class="progress-track"><span id="sessionProgress"></span></div></div>
+            <button class="icon-button" id="speakButton" aria-label="Ouvir palavra">🔊</button>
+          </div>
+
+          <p class="tap-hint" id="tapHint">Toque na carta para revelar</p>
+          <button class="flashcard" id="flashcard" aria-label="Virar carta">
+            <span class="card-face card-front"><span class="sparkle">✦</span><strong id="studyWord">Palavra</strong><small>TOQUE PARA DESCOBRIR</small></span>
+            <span class="card-face card-back"><span class="eyebrow">SIGNIFICADO</span><strong id="cardWord">Palavra</strong><p id="definition"></p><span class="eyebrow">PALAVRAS PARECIDAS</span><span class="synonyms" id="synonyms"></span></span>
+          </button>
+
+          <div class="rating-panel" id="ratingPanel" aria-hidden="true">
+            <p>Como foi lembrar dessa palavra?</p>
+            <div class="rating-buttons">
+              <button data-rating="wrong" class="rating wrong"><b>×</b><span>Errei</span></button>
+              <button data-rating="hard" class="rating hard"><b>~</b><span>Pensei muito</span></button>
+              <button data-rating="easy" class="rating easy"><b>✓</b><span>Foi fácil</span></button>
+            </div>
+          </div>
+        </section>
+
+        <section id="resultScreen" class="screen result" aria-labelledby="resultTitle">
+          <div class="result-icon" id="resultIcon">✦</div>
+          <span class="eyebrow">MISSÃO CONCLUÍDA</span>
+          <h1 id="resultTitle">Mandou muito bem!</h1>
+          <p id="resultCopy"></p>
+          <div class="result-score"><strong id="easyScore">0</strong><span>palavras fáceis de 21</span></div>
+          <button class="primary-button" id="finishButton"><span>Voltar ao início</span><b>→</b></button>
+        </section>
+
+        <section id="rewardScreen" class="screen reward" aria-labelledby="rewardTitle">
+          <div class="confetti" id="confetti" aria-hidden="true"></div>
+          <div class="gold-ticket">
+            <span class="ticket-star">★</span><span class="eyebrow">TICKET DOURADO</span>
+            <h1 id="rewardTitle">Você desbloqueou a Recompensa!</h1>
+            <p>Leve o celular até o Master para validação.</p>
+            <button class="gold-button" id="validateButton">Validar com o Master</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="settingsDialog">
+      <form method="dialog" class="modal-card" id="settingsForm">
+        <button class="modal-close" value="cancel" aria-label="Fechar">✕</button>
+        <span class="eyebrow">CONFIGURAÇÕES</span><h2>Personalizar Lumina</h2>
+        <label>Nome da estudante<input id="studentName" maxlength="20" autocomplete="off" /></label>
+        <label>PIN do Master<input id="masterPin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="4 dígitos" /></label>
+        <button class="primary-button compact" value="save">Salvar</button>
+        <button class="text-button" type="button" id="resetData">Reiniciar todo o progresso</button>
+      </form>
+    </dialog>
+
+    <dialog id="pinDialog">
+      <form method="dialog" class="modal-card" id="pinForm">
+        <button class="modal-close" value="cancel" aria-label="Fechar">✕</button>
+        <span class="eyebrow">ÁREA DO MASTER</span><h2>Validar recompensa</h2>
+        <p>Digite o PIN de 4 dígitos para encerrar este ciclo.</p>
+        <input id="pinAttempt" class="pin-input" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" aria-label="PIN do Master" required />
+        <p class="form-error" id="pinError" role="alert"></p>
+        <button class="gold-button" value="validate">Entregar prêmio e iniciar novo ciclo</button>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script>
+const WORD_NAMES = `Abundância,Acolhedor,Alarde,Alheio,Alicerce,Aliado,Altruísta,Ameaçador,Âmago,Angústia,Ansiedade,Antecipar,Apatia,Apogeu,Aprimorar,Árduo,Arrogância,Assertividade,Astúcia,Audaz,Auge,Autêntico,Autonomia,Autossabotagem,Avassalador,Banal,Benevolente,Bizarro,Bravura,Brilhante,Brusco,Cativante,Cauteloso,Célebre,Cético,Cínico,Clareza,Clichê,Coerente,Coincidência,Colossal,Comovente,Compaixão,Complacente,Compreensão,Conceder,Conciso,Conflito,Consequência,Constante,Contagioso,Contraditório,Contundente,Convicção,Corrupto,Crucial,Cúmplice,Curiosidade,Decepcionante,Decisivo,Dedicação,Definitivo,Delicado,Desafiador,Desapego,Desastroso,Desconfiança,Desconforto,Desespero,Deslumbrante,Desolador,Desprezo,Destemido,Destreza,Devoção,Dilema,Dinâmico,Drástico,Efêmero,Eficaz,Eloquente,Empatia,Empenho,Engenhoso,Enigma,Enigmático,Entusiasmo,Envolvente,Equivalente,Esclarecer,Essencial,Espontâneo,Estratégia,Euforia,Evidente,Exausto,Excepcional,Excêntrico,Êxito,Expectativa,Extraordinário,Fascinante,Fictício,Fiel,Foco,Forasteiro,Formidável,Frágil,Frenético,Frustrado,Fugaz,Furioso,Fútil,Genuíno,Gentil,Gesto,Grandioso,Gratidão,Hábito,Harmonia,Heroico,Hesitar,Hipócrita,Hipótese,Honra,Hostil,Humor,Identidade,Idôneo,Ilusão,Imediato,Imenso,Iminente,Impacto,Imparável,Imparcial,Impecável,Imperceptível,Implacável,Imponente,Imprescindível,Imprudente,Impulsivo,Ímpeto,Inabalável,Inacreditável,Incalculável,Incessante,Inconsciente,Indeciso,Indiferente,Indispensável,Inédito,Inerente,Inesperado,Inevitável,Infame,Influência,Injustiça,Inocente,Inovador,Inspirador,Instinto,Íntegro,Intenso,Intolerante,Intrépido,Intrincado,Intrigante,Introspecção,Intuição,Inusitado,Inventivo,Invisível,Irônico,Irreversível,Jornada,Jovial,Julgamento,Lealdade,Legado,Lógica,Lúcido,Lúdico,Magnânimo,Majestoso,Mágoa,Maravilhoso,Medíocre,Melancólico,Memorável,Mérito,Meticuloso,Minucioso,Misterioso,Monumental,Motivação,Nocivo,Nostalgia,Notável,Nuança,Obcecado,Obscuro,Obsoleto,Obstáculo,Oculto,Ofegante,Oportuno,Opressivo,Orgulho,Original,Otimista,Otimizar,Ousadia,Pacato,Pânico,Patético,Peculiar,Perene,Perspicaz,Persuasivo,Péssimo,Pioneiro,Plácido,Plausível,Polêmico,Ponderar,Poupar,Pragmático,Precioso,Preconceito,Prepotente,Previsível,Privilégio,Proatividade,Procrastinação,Propício,Propósito,Provisório,Radical,Rancor,Rebelde,Receio,Recíproco,Reconhecimento,Redenção,Reflexão,Relevante,Relutante,Repentino,Resiliência,Respeito,Ressalva,Retaliar,Revelação,Rigidez,Rigoroso,Romper,Sagaz,Sarcasmo,Satisfação,Selvagem,Sensato,Sereno,Significativo,Sincero,Solene,Sombrio,Sublime,Substituir,Sufocante,Sugestão,Supérfluo,Superficial,Supremo,Suspeito,Sussurro,Sutil,Tangível,Tenaz,Tensão,Terrível,Tolerante,Traição,Transformação,Trágico,Triunfo,Trivial,Unânime,Vazio,Verossímil,Versátil,Vigente,Vigoroso,Vingança,Virtude,Visão,Vislumbre,Vívido,Zelo`.split(",");
+
+const DEFINITIONS = {
+  "Abundância":["Grande quantidade; existência além do necessário.","fartura, riqueza, profusão"],"Acolhedor":["Que recebe com carinho e faz alguém se sentir bem.","hospitaleiro, afetuoso, receptivo"],"Alarde":["Divulgação ruidosa ou exagerada de alguma coisa.","ostentação, anúncio, rumor"],"Alheio":["Que não participa ou não percebe o que acontece.","distante, desatento, estranho"],"Alicerce":["Base que sustenta uma construção ou uma ideia.","fundamento, base, sustentação"],"Aliado":["Quem se une a outro em favor de um objetivo.","parceiro, companheiro, apoiador"],"Altruísta":["Que age pensando no bem de outras pessoas.","generoso, solidário, abnegado"],"Âmago":["Parte mais profunda ou essencial de algo.","essência, núcleo, íntimo"],"Apatia":["Falta de interesse, emoção ou disposição.","indiferença, desânimo, passividade"],"Apogeu":["Ponto mais alto de desenvolvimento ou sucesso.","auge, ápice, culminância"],"Aprimorar":["Tornar algo melhor ou mais perfeito.","aperfeiçoar, melhorar, refinar"],"Árduo":["Que exige muito esforço para ser realizado.","difícil, trabalhoso, penoso"],"Assertividade":["Capacidade de se expressar com clareza e respeito.","firmeza, objetividade, segurança"],"Astúcia":["Habilidade de perceber e resolver situações com esperteza.","sagacidade, esperteza, perspicácia"],"Audaz":["Que enfrenta riscos com coragem.","ousado, valente, destemido"],"Autêntico":["Que é verdadeiro e fiel à própria natureza.","genuíno, legítimo, verdadeiro"],"Autonomia":["Capacidade de agir e decidir por conta própria.","independência, liberdade, autogoverno"],"Banal":["Comum e sem originalidade ou importância.","trivial, corriqueiro, vulgar"],"Benevolente":["Que demonstra bondade e boa vontade.","bondoso, generoso, indulgente"],"Bravura":["Coragem diante do perigo ou da dificuldade.","valentia, heroísmo, ousadia"],"Cativante":["Que encanta e prende a atenção.","encantador, atraente, envolvente"],"Cauteloso":["Que age com cuidado para evitar riscos.","prudente, precavido, cuidadoso"],"Cético":["Que tende a duvidar antes de acreditar.","descrente, desconfiado, questionador"],"Clareza":["Qualidade do que é fácil de compreender.","nitidez, lucidez, transparência"],"Coerente":["Que apresenta lógica e harmonia entre suas partes.","lógico, consistente, compatível"],"Compaixão":["Sensibilidade ao sofrimento alheio e desejo de ajudar.","empatia, piedade, solidariedade"],"Conciso":["Que expressa muito usando poucas palavras.","breve, sucinto, resumido"],"Convicção":["Certeza firme a respeito de uma ideia.","certeza, crença, confiança"],"Crucial":["Extremamente importante para um resultado.","essencial, decisivo, fundamental"],"Curiosidade":["Desejo de conhecer, descobrir ou compreender.","interesse, investigação, vontade"],"Dedicação":["Empenho constante aplicado a uma atividade.","esforço, devoção, compromisso"],"Desapego":["Capacidade de abrir mão sem dependência excessiva.","desprendimento, renúncia, liberdade"],"Destemido":["Que não se deixa dominar pelo medo.","corajoso, intrépido, valente"],"Destreza":["Habilidade e agilidade para realizar algo.","perícia, habilidade, agilidade"],"Dilema":["Situação que exige escolher entre alternativas difíceis.","impasse, dúvida, escolha"],"Dinâmico":["Que apresenta movimento, energia ou mudanças.","ativo, ágil, enérgico"],"Efêmero":["Que dura por pouco tempo.","breve, passageiro, fugaz"],"Eficaz":["Que produz o resultado esperado.","eficiente, efetivo, útil"],"Eloquente":["Que se expressa de modo claro e convincente.","expressivo, persuasivo, convincente"],"Empatia":["Capacidade de compreender sentimentos de outra pessoa.","compreensão, sintonia, sensibilidade"],"Engenhoso":["Que encontra soluções criativas e inteligentes.","inventivo, habilidoso, criativo"],"Enigma":["Algo difícil de entender ou explicar.","mistério, incógnita, segredo"],"Entusiasmo":["Grande animação e interesse por alguma coisa.","empolgação, fervor, alegria"],"Essencial":["Absolutamente necessário; o que forma a essência.","fundamental, indispensável, básico"],"Estratégia":["Plano organizado para alcançar um objetivo.","plano, método, tática"],"Euforia":["Sensação intensa de alegria e entusiasmo.","exaltação, entusiasmo, animação"],"Êxito":["Resultado favorável; objetivo alcançado.","sucesso, triunfo, vitória"],"Foco":["Concentração da atenção em um objetivo.","atenção, alvo, concentração"],"Fugaz":["Que passa ou desaparece rapidamente.","efêmero, breve, passageiro"],"Genuíno":["Que é verdadeiro, puro e sem falsidade.","autêntico, legítimo, sincero"],"Gratidão":["Reconhecimento por um benefício recebido.","agradecimento, reconhecimento, apreço"],"Hábito":["Comportamento repetido com frequência.","costume, rotina, prática"],"Harmonia":["Combinação equilibrada e agradável entre partes.","equilíbrio, concórdia, sintonia"],"Hipótese":["Explicação provisória que precisa ser verificada.","suposição, teoria, possibilidade"],"Ímpeto":["Impulso forte e repentino para agir.","impulso, vigor, arroubo"],"Íntegro":["Que age com honestidade e princípios.","honesto, correto, incorruptível"],"Intrépido":["Que enfrenta perigos sem hesitar.","destemido, corajoso, audaz"],"Introspecção":["Observação atenta dos próprios pensamentos e sentimentos.","reflexão, autoanálise, interiorização"],"Intuição":["Compreensão imediata sem raciocínio consciente.","pressentimento, percepção, instinto"],"Jornada":["Caminho percorrido, real ou de desenvolvimento pessoal.","viagem, percurso, trajetória"],"Lealdade":["Fidelidade aos compromissos e às pessoas.","fidelidade, constância, dedicação"],"Legado":["Aquilo que alguém deixa para as gerações futuras.","herança, contribuição, patrimônio"],"Lúcido":["Que pensa e percebe com clareza.","claro, consciente, sensato"],"Magnânimo":["Muito generoso, capaz de perdoar e agir com grandeza.","generoso, nobre, benevolente"],"Mérito":["Qualidade ou ação que merece reconhecimento.","valor, merecimento, virtude"],"Meticuloso":["Que presta muita atenção aos menores detalhes.","minucioso, cuidadoso, rigoroso"],"Nostalgia":["Saudade ligada a lembranças do passado.","saudade, melancolia, lembrança"],"Nuança":["Pequena diferença de tom, sentido ou opinião.","matiz, gradação, sutileza"],"Obsoleto":["Que deixou de ser útil ou atual.","ultrapassado, antiquado, desatualizado"],"Otimizar":["Melhorar algo para obter o melhor resultado possível.","aperfeiçoar, potencializar, melhorar"],"Perene":["Que permanece por muito tempo ou continuamente.","duradouro, permanente, eterno"],"Perspicaz":["Que percebe e compreende rapidamente.","sagaz, atento, astuto"],"Plausível":["Que parece razoável ou possível de ser verdadeiro.","aceitável, crível, provável"],"Ponderar":["Examinar com atenção antes de decidir.","considerar, refletir, avaliar"],"Pragmático":["Que valoriza soluções práticas e resultados concretos.","prático, objetivo, realista"],"Proatividade":["Iniciativa para agir antes que seja necessário pedir.","iniciativa, antecipação, dinamismo"],"Procrastinação":["Ato de adiar tarefas ou decisões.","adiamento, demora, postergação"],"Propósito":["Razão ou objetivo que orienta uma ação.","objetivo, intenção, finalidade"],"Recíproco":["Que ocorre ou é oferecido de ambas as partes.","mútuo, correspondente, bilateral"],"Resiliência":["Capacidade de se recuperar e adaptar após dificuldades.","superação, resistência, adaptação"],"Ressalva":["Observação que limita ou faz uma exceção.","restrição, reserva, condição"],"Sagaz":["Que compreende situações com rapidez e inteligência.","perspicaz, astuto, esperto"],"Sarcasmo":["Ironia intensa usada para criticar ou provocar.","ironia, zombaria, deboche"],"Sensato":["Que age com equilíbrio e bom julgamento.","prudente, razoável, ajuizado"],"Sereno":["Que demonstra calma e tranquilidade.","calmo, tranquilo, sossegado"],"Sublime":["De beleza ou grandeza extraordinária.","magnífico, elevado, esplêndido"],"Sutil":["Delicado ou difícil de perceber imediatamente.","leve, discreto, tênue"],"Tangível":["Que pode ser tocado ou percebido concretamente.","concreto, palpável, real"],"Tenaz":["Que persiste com firmeza diante de obstáculos.","persistente, firme, obstinado"],"Trivial":["Muito comum, simples ou pouco importante.","banal, comum, corriqueiro"],"Verossímil":["Que tem aparência de verdade; que parece possível.","plausível, crível, provável"],"Versátil":["Que se adapta bem a diferentes funções.","adaptável, flexível, multifuncional"],"Virtude":["Qualidade moral positiva demonstrada nas ações.","mérito, bondade, excelência"],"Vívido":["Muito intenso, claro ou cheio de vida.","intenso, brilhante, marcante"],"Zelo":["Cuidado atento e dedicação por algo ou alguém.","cuidado, dedicação, atenção"]
+};
+
+const LUMINA_WORDS = WORD_NAMES.map((word) => {
+  const known = DEFINITIONS[word];
+  return { word, definition: known?.[0] || `Qualidade, estado ou ideia expressa pelo termo “${word.toLowerCase()}”.`, synonyms: known?.[1] || "conceito, ideia, significado" };
+});
+
+    </script>
+    <script>
+const STORAGE_KEY = "lumina-progress-v1";
+const SUCCESS_TARGET = 17;
+const SESSION_SIZE = 21;
+const defaults = { name: "Bia", pin: "1234", streak: 0, history: [], reward: false, activeSession: null };
+let state = loadState();
+let session = null;
+
+const $ = (selector) => document.querySelector(selector);
+const screens = [...document.querySelectorAll(".screen")];
+const todayKey = () => new Date().toLocaleDateString("en-CA");
+
+function loadState() {
+  try { return { ...defaults, ...JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}") }; }
+  catch { return { ...defaults }; }
+}
+function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+function showScreen(id) { screens.forEach((screen) => screen.classList.toggle("active", screen.id === id)); window.scrollTo(0, 0); }
+function dateOffset(days) { const date = new Date(); date.setDate(date.getDate() + days); return date.toLocaleDateString("en-CA"); }
+function seededSelection(date) {
+  const seed = [...date].reduce((sum, char) => sum + char.charCodeAt(0), 0);
+  return Array.from({ length: SESSION_SIZE }, (_, index) => LUMINA_WORDS[(seed * 13 + index * 47) % LUMINA_WORDS.length]);
+}
+function refreshDashboard() {
+  const successful = state.history.filter((item) => item.success);
+  $("#welcomeTitle").innerHTML = `Olá, ${escapeHtml(state.name)}! <span>☀️</span>`;
+  $("#streakNumber").textContent = state.streak;
+  $("#progressRing").style.setProperty("--progress", `${state.streak * 72}deg`);
+  $("#progressRing").setAttribute("aria-label", `${state.streak} de 5 dias concluídos`);
+  $("#streakMessage").textContent = state.streak ? `${state.streak} ${state.streak === 1 ? "dia iluminado" : "dias iluminados"}!` : "Sua luz começa hoje";
+  $("#streakHint").textContent = state.streak ? `Faltam ${5 - state.streak} para o Ticket Dourado.` : "Complete 5 dias seguidos para liberar o Ticket Dourado.";
+  $("#weekScore").textContent = `${successful.filter((x) => x.date >= dateOffset(-4)).length}/5`;
+  $("#dayRow").innerHTML = Array.from({ length: 5 }, (_, i) => {
+    const date = dateOffset(i - 4); const result = state.history.find((x) => x.date === date);
+    const weekday = new Date(`${date}T12:00:00`).toLocaleDateString("pt-BR", { weekday: "short" }).replace(".", "");
+    return `<span class="day ${result?.success ? "success" : ""} ${date === todayKey() ? "today" : ""}"><b>${result?.success ? "✓" : new Date(`${date}T12:00:00`).getDate()}</b>${weekday}</span>`;
+  }).join("");
+  const completedToday = state.history.some((item) => item.date === todayKey());
+  $("#startButton").disabled = completedToday;
+  $("#startButton span").textContent = completedToday ? "Missão de hoje concluída" : state.activeSession ? "Continuar Missão do Dia" : "Iniciar Missão do Dia";
+}
+function startSession() {
+  session = state.activeSession?.date === todayKey() ? state.activeSession : { date: todayKey(), index: 0, ratings: [], flipped: false };
+  state.activeSession = session; saveState(); showScreen("studyScreen"); renderCard();
+}
+function renderCard() {
+  const word = seededSelection(session.date)[session.index];
+  $("#studyWord").textContent = word.word; $("#cardWord").textContent = word.word;
+  $("#definition").textContent = word.definition; $("#synonyms").textContent = word.synonyms;
+  $("#cardCount").textContent = `${session.index + 1} de ${SESSION_SIZE}`;
+  $("#sessionProgress").style.width = `${(session.index / SESSION_SIZE) * 100}%`;
+  $("#flashcard").classList.remove("flipped"); $("#ratingPanel").classList.remove("visible");
+  $("#ratingPanel").setAttribute("aria-hidden", "true"); $("#tapHint").textContent = "Toque na carta para revelar";
+  setTimeout(speakCurrentWord, 250);
+}
+function flipCard() {
+  if ($("#flashcard").classList.contains("flipped")) return;
+  $("#flashcard").classList.add("flipped"); $("#ratingPanel").classList.add("visible");
+  $("#ratingPanel").setAttribute("aria-hidden", "false"); $("#tapHint").textContent = "Agora avalie como foi lembrar";
+}
+function rate(rating) {
+  if (!$("#flashcard").classList.contains("flipped")) return;
+  session.ratings.push(rating); session.index += 1; state.activeSession = session; saveState();
+  if (session.index >= SESSION_SIZE) finishSession(); else renderCard();
+}
+function finishSession() {
+  const easy = session.ratings.filter((rating) => rating === "easy").length;
+  const success = easy >= SUCCESS_TARGET;
+  const yesterdaySuccessful = state.history.some((item) => item.date === dateOffset(-1) && item.success);
+  state.streak = success ? (yesterdaySuccessful ? state.streak + 1 : 1) : 0;
+  state.history = [...state.history.filter((item) => item.date !== todayKey()), { date: todayKey(), success, easy }].slice(-30);
+  state.activeSession = null;
+  if (state.streak >= 5) state.reward = true;
+  saveState(); $("#easyScore").textContent = easy;
+  $("#resultIcon").textContent = success ? "✦" : "↻";
+  $("#resultTitle").textContent = success ? "Mandou muito bem!" : "Cada tentativa ilumina!";
+  $("#resultCopy").textContent = success ? "Meta diária alcançada. Mais um brilho no seu ciclo!" : `Você precisa marcar “Foi fácil” em ${SUCCESS_TARGET} palavras. Amanhã começa uma nova sequência.`;
+  showScreen("resultScreen"); session = null;
+}
+function speakCurrentWord() {
+  if (!session || !("speechSynthesis" in window)) return;
+  speechSynthesis.cancel(); const utterance = new SpeechSynthesisUtterance(seededSelection(session.date)[session.index].word);
+  utterance.lang = "pt-BR"; utterance.rate = 0.82; speechSynthesis.speak(utterance);
+}
+function showReward() { createConfetti(); showScreen("rewardScreen"); }
+function createConfetti() { $("#confetti").innerHTML = Array.from({ length: 50 }, (_, i) => `<i style="--x:${(i * 37) % 100}%;--c:${["#7457f5","#32c7e8","#f7bd3b","#ff6b68","#57d8ad"][i % 5]};--d:${3 + i % 4}s;--delay:-${i % 5}s;--r:${i * 29}deg"></i>`).join(""); }
+function toast(message) { const el = $("#toast"); el.textContent = message; el.classList.add("show"); setTimeout(() => el.classList.remove("show"), 2400); }
+function escapeHtml(value) { const node = document.createElement("span"); node.textContent = value; return node.innerHTML; }
+
+$("#startButton").addEventListener("click", startSession);
+$("#flashcard").addEventListener("click", flipCard);
+$("#speakButton").addEventListener("click", speakCurrentWord);
+$("#closeStudy").addEventListener("click", () => { saveState(); refreshDashboard(); showScreen("dashboardScreen"); });
+document.querySelectorAll("[data-rating]").forEach((button) => button.addEventListener("click", () => rate(button.dataset.rating)));
+$("#finishButton").addEventListener("click", () => { refreshDashboard(); state.reward ? showReward() : showScreen("dashboardScreen"); });
+$("#settingsButton").addEventListener("click", () => { $("#studentName").value = state.name; $("#masterPin").value = ""; $("#settingsDialog").showModal(); });
+$("#settingsForm").addEventListener("submit", (event) => { if (event.submitter?.value !== "save") return; event.preventDefault(); const pin = $("#masterPin").value; if (pin && !/^\d{4}$/.test(pin)) return toast("O PIN precisa ter 4 números."); state.name = $("#studentName").value.trim() || "Bia"; if (pin) state.pin = pin; saveState(); $("#settingsDialog").close(); refreshDashboard(); toast("Configurações salvas!"); });
+$("#resetData").addEventListener("click", () => { if (!confirm("Apagar todo o progresso e iniciar novamente?")) return; state = { ...defaults }; saveState(); $("#settingsDialog").close(); refreshDashboard(); toast("Progresso reiniciado."); });
+$("#validateButton").addEventListener("click", () => { $("#pinAttempt").value = ""; $("#pinError").textContent = ""; $("#pinDialog").showModal(); });
+$("#pinForm").addEventListener("submit", (event) => { if (event.submitter?.value !== "validate") return; event.preventDefault(); if ($("#pinAttempt").value !== state.pin) { $("#pinError").textContent = "PIN incorreto. Peça ajuda ao Master."; return; } state.streak = 0; state.reward = false; state.history = []; saveState(); $("#pinDialog").close(); refreshDashboard(); showScreen("dashboardScreen"); toast("Recompensa validada. Um novo ciclo começou!"); });
+
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("service-worker.js");
+refreshDashboard(); if (state.reward) showReward();
+
+    </script>
+  </body>
+</html>
