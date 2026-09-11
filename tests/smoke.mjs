@@ -15,7 +15,7 @@ assert.ok(context.words.every(({ word, example }) => example.toLocaleLowerCase("
 assert.equal(context.words.find(({ word }) => word === "Cético").example, "Ele permaneceu cético diante daquela explicação.");
 
 const html = fs.readFileSync(new URL("../index.html", import.meta.url), "utf8");
-for (const id of ["dashboardScreen", "studyScreen", "resultScreen", "rewardScreen", "pinDialog", "onboardingDialog", "setupSuccessDialog", "resetDialog", "masterAreaButton", "example", "antonyms"]) {
+for (const id of ["dashboardScreen", "studyScreen", "resultScreen", "rewardScreen", "pinDialog", "onboardingDialog", "setupSuccessDialog", "resetDialog", "masterAreaButton", "updateButton", "example", "antonyms"]) {
   assert.match(html, new RegExp(`id=["']${id}["']`), `a interface deve conter ${id}`);
 }
 
@@ -23,10 +23,13 @@ const app = fs.readFileSync(new URL("../app.js", import.meta.url), "utf8");
 assert.match(app, /const SESSION_SIZE = 21;/, "a sessão deve usar exatamente 21 cartas");
 assert.match(app, /const SUCCESS_TARGET = 17;/, "a meta de 80% deve equivaler a 17 cartas");
 assert.match(app, /masterConfigured: false/, "o primeiro acesso deve exigir configuração do Master");
-assert.match(app, /service-worker\.js\?v=4/, "o registro deve forçar a verificação da versão atual do service worker");
+assert.match(app, /const APP_VERSION = "1\.2\.0";/, "o aplicativo deve declarar sua versão atual");
+assert.match(app, /service-worker\.js\?v=5/, "o registro deve forçar a verificação da versão atual do service worker");
+assert.match(app, /registration\.unregister\(\)/, "a atualização manual deve remover o service worker anterior");
 
 const serviceWorker = fs.readFileSync(new URL("../service-worker.js", import.meta.url), "utf8");
-assert.match(serviceWorker, /fetch\(event\.request\)/, "o aplicativo deve consultar a rede antes de usar o cache offline");
+assert.match(serviceWorker, /fetch\(event\.request, \{ cache: "no-store" \}\)/, "o aplicativo deve consultar a rede antes de usar o cache offline");
+assert.match(serviceWorker, /cache: "no-store"/, "a consulta de atualização não deve reutilizar o cache HTTP do navegador");
 assert.match(serviceWorker, /self\.skipWaiting\(\)/, "uma atualização deve ser ativada sem aguardar o fechamento das abas");
 
 console.log("Smoke test aprovado: 300 palavras, 21 cartas e fluxos essenciais presentes.");

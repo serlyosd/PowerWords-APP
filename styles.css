@@ -3,6 +3,9 @@
 @media(max-width:390px){.app-shell{padding-inline:16px}.streak-card{grid-template-columns:110px 1fr;padding:20px 15px}.progress-ring{width:105px;height:105px}.card-face{padding:24px}.topbar{height:65px}.rating span{font-size:10px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.confetti{display:none}}
 
+.brand small{font-size:10px;color:var(--muted);font-weight:600}
+.version-panel{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 4px 0;color:var(--muted);font-size:11px}.version-panel button{border:0;background:transparent;color:var(--violet);font-weight:700;text-decoration:underline;cursor:pointer}
+
 /* Legibilidade reforçada para a experiência de estudo */
 .card-front strong{font-size:clamp(32px,10vw,47px);line-height:1.12;overflow-wrap:anywhere}
 .card-back{justify-content:flex-start;padding:25px 28px;text-align:left;overflow:auto}

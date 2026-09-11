@@ -1,6 +1,8 @@
-# Lumina — MVP v1.0.0
+# Lumina — MVP v1.2.0
 
 Aplicativo mobile-first de estudo de vocabulário por flashcards, repetição diária e recompensa familiar.
+
+**Versão atual: 1.2.0.** O número aparece ao lado do nome Lumina e no final da tela inicial.
 
 ## Testar agora
 
@@ -44,6 +46,8 @@ Se o comando do servidor não funcionar, instale o [Python 3](https://www.python
 Para apagar um treino de teste antes de apresentar o aplicativo, toque em **Área do Master**, escolha **Reiniciar para apresentar** e informe o PIN. O treino do dia será apagado e a configuração inicial será aberta novamente.
 
 O botão da missão fica cinza depois que as 21 palavras do dia são concluídas, pois normalmente só existe uma missão por dia. Para repetir no mesmo dia durante um teste ou apresentação, use **Área do Master**, exibida logo acima do botão da missão.
+
+Em cada nova publicação, abra uma vez o endereço acrescentando a versão ao final, por exemplo `?v=1.2.0`. Depois, o botão **Buscar atualização** apaga somente os arquivos temporários, preserva o progresso e recarrega diretamente do GitHub Pages.
 
 Não existe PIN padrão. O Master cria e confirma o próprio PIN no primeiro acesso. O PIN protege alterações de configuração, reinicialização e validação do prêmio.
 

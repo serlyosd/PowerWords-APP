@@ -9,13 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=1.1.1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <link rel="stylesheet" href="styles.css?v=1.2.0" />
     <title>Lumina</title>
   </head>
   <body>
     <div class="app-shell">
       <header class="topbar">
-        <a class="brand" href="#" aria-label="Lumina — início"><span class="brand-mark">✦</span>Lumina</a>
+        <a class="brand" href="#" aria-label="Lumina — início"><span class="brand-mark">✦</span>Lumina <small>v1.2.0</small></a>
         <button class="icon-button" id="settingsButton" aria-label="Abrir configurações">⚙</button>
       </header>
 
@@ -53,6 +54,7 @@
             <div class="section-heading"><div><span class="eyebrow">SEU RITMO</span><h2>Últimos 5 dias</h2></div><span id="weekScore">0/5</span></div>
             <div class="day-row" id="dayRow"></div>
           </div>
+          <div class="version-panel"><span>Versão instalada: <strong>1.2.0</strong></span><button type="button" id="updateButton">Buscar atualização</button></div>
         </section>
 
         <section id="studyScreen" class="screen study" aria-labelledby="studyWord">
@@ -157,7 +159,7 @@
     </dialog>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="words.js?v=1.1.1"></script>
-    <script src="app.js?v=1.1.1"></script>
+    <script src="words.js?v=1.2.0"></script>
+    <script src="app.js?v=1.2.0"></script>
   </body>
 </html>

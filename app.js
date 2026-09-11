@@ -1,4 +1,5 @@
 const STORAGE_KEY = "lumina-progress-v1";
+const APP_VERSION = "1.2.0";
 const SUCCESS_TARGET = 17;
 const SESSION_SIZE = 21;
 const defaults = { name: "Bia", pin: "", masterConfigured: false, rewardName: "", cycleStarted: "", streak: 0, history: [], reward: false, activeSession: null };
@@ -95,6 +96,12 @@ $("#closeStudy").addEventListener("click", () => { saveState(); refreshDashboard
 document.querySelectorAll("[data-rating]").forEach((button) => button.addEventListener("click", () => rate(button.dataset.rating)));
 $("#finishButton").addEventListener("click", () => { refreshDashboard(); state.reward ? showReward() : showScreen("dashboardScreen"); });
 $("#settingsButton").addEventListener("click", () => { $("#studentName").value = state.name; $("#settingsReward").value = state.rewardName; $("#currentMasterPin").value = ""; $("#masterPin").value = ""; $("#settingsDialog").showModal(); });
+$("#updateButton")?.addEventListener("click", async () => {
+  $("#updateButton").textContent = "Atualizando…";
+  if ("caches" in window) await Promise.all((await caches.keys()).map((key) => caches.delete(key)));
+  if ("serviceWorker" in navigator) await Promise.all((await navigator.serviceWorker.getRegistrations()).map((registration) => registration.unregister()));
+  location.replace(`${location.origin}${location.pathname}?v=${APP_VERSION}&atualizar=${Date.now()}`);
+});
 $("#masterAreaButton")?.addEventListener("click", () => { $("#resetPin").value = ""; $("#resetError").textContent = ""; $("#resetDialog").showModal(); });
 $("#closeReset")?.addEventListener("click", () => $("#resetDialog").close());
 $("#resetForm")?.addEventListener("submit", (event) => {
@@ -119,5 +126,5 @@ $("#onboardingForm").addEventListener("submit", (event) => {
   saveState(); $("#onboardingDialog").close(); $("#rewardConfirmation").textContent = state.rewardName; refreshDashboard(); $("#setupSuccessDialog").showModal();
 });
 
-if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("service-worker.js?v=4").then((registration) => registration.update());
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("service-worker.js?v=5").then((registration) => registration.update());
 refreshDashboard(); if (!state.masterConfigured) $("#onboardingDialog").showModal(); else if (state.reward) showReward();
