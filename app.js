@@ -95,9 +95,9 @@ $("#closeStudy").addEventListener("click", () => { saveState(); refreshDashboard
 document.querySelectorAll("[data-rating]").forEach((button) => button.addEventListener("click", () => rate(button.dataset.rating)));
 $("#finishButton").addEventListener("click", () => { refreshDashboard(); state.reward ? showReward() : showScreen("dashboardScreen"); });
 $("#settingsButton").addEventListener("click", () => { $("#studentName").value = state.name; $("#settingsReward").value = state.rewardName; $("#currentMasterPin").value = ""; $("#masterPin").value = ""; $("#settingsDialog").showModal(); });
-$("#masterAreaButton").addEventListener("click", () => { $("#resetPin").value = ""; $("#resetError").textContent = ""; $("#resetDialog").showModal(); });
-$("#closeReset").addEventListener("click", () => $("#resetDialog").close());
-$("#resetForm").addEventListener("submit", (event) => {
+$("#masterAreaButton")?.addEventListener("click", () => { $("#resetPin").value = ""; $("#resetError").textContent = ""; $("#resetDialog").showModal(); });
+$("#closeReset")?.addEventListener("click", () => $("#resetDialog").close());
+$("#resetForm")?.addEventListener("submit", (event) => {
   event.preventDefault();
   if ($("#resetPin").value !== state.pin) { $("#resetError").textContent = "PIN incorreto. Tente novamente."; return; }
   if (!confirm("Apagar o treino e voltar à configuração inicial?")) return;
@@ -119,5 +119,5 @@ $("#onboardingForm").addEventListener("submit", (event) => {
   saveState(); $("#onboardingDialog").close(); $("#rewardConfirmation").textContent = state.rewardName; refreshDashboard(); $("#setupSuccessDialog").showModal();
 });
 
-if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("service-worker.js");
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("service-worker.js?v=4").then((registration) => registration.update());
 refreshDashboard(); if (!state.masterConfigured) $("#onboardingDialog").showModal(); else if (state.reward) showReward();

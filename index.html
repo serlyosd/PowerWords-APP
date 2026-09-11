@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=1.1.1" />
     <title>Lumina</title>
   </head>
   <body>
@@ -44,6 +44,8 @@
             <span class="verified-mark" aria-label="Configuração confirmada">✓</span>
           </div>
 
+          <button class="master-button" id="masterAreaButton"><span>◆</span><span><strong>Área do Master</strong><small>Reiniciar o treino para apresentação</small></span><b>›</b></button>
+
           <button class="primary-button" id="startButton"><span>Iniciar Missão do Dia</span><b>→</b></button>
           <p class="mission-meta"><span>✦</span> 21 palavras &nbsp;•&nbsp; aproximadamente 7 minutos</p>
 
@@ -51,7 +53,6 @@
             <div class="section-heading"><div><span class="eyebrow">SEU RITMO</span><h2>Últimos 5 dias</h2></div><span id="weekScore">0/5</span></div>
             <div class="day-row" id="dayRow"></div>
           </div>
-          <button class="master-button" id="masterAreaButton"><span>◆</span><span><strong>Área do Master</strong><small>Configurações e reinício para apresentação</small></span><b>›</b></button>
         </section>
 
         <section id="studyScreen" class="screen study" aria-labelledby="studyWord">
@@ -156,7 +157,7 @@
     </dialog>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="words.js"></script>
-    <script src="app.js"></script>
+    <script src="words.js?v=1.1.1"></script>
+    <script src="app.js?v=1.1.1"></script>
   </body>
 </html>
