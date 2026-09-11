@@ -34,11 +34,14 @@ Se o comando do servidor não funcionar, instale o [Python 3](https://www.python
 
 ## Como usar
 
-1. Toque em **Iniciar Missão do Dia**.
-2. Toque na carta para conferir conceito e sinônimos.
-3. Avalie cada uma das 21 palavras como **Errei**, **Pensei muito** ou **Foi fácil**.
-4. A meta diária é marcar pelo menos 17 palavras (80%) como **Foi fácil**.
-5. Após cinco metas consecutivas, leve o Ticket Dourado ao Master. O PIN inicial é `1234` e deve ser trocado em configurações.
+1. No primeiro acesso, o Master informa o nome, o prêmio e confirma um PIN de 4 números.
+2. Após a confirmação **Master configurado**, toque em **Iniciar Missão do Dia**.
+3. Toque na carta para conferir conceito, exemplo, sinônimos e antônimos.
+4. Avalie cada uma das 21 palavras como **Errei**, **Pensei muito** ou **Foi fácil**.
+5. A meta diária é marcar pelo menos 17 palavras (80%) como **Foi fácil**.
+6. Após cinco metas consecutivas, o Master digita o PIN para confirmar a entrega do prêmio e iniciar outro ciclo.
+
+Não existe PIN padrão. O Master cria e confirma o próprio PIN no primeiro acesso. O PIN protege alterações de configuração, reinicialização e validação do prêmio.
 
 O progresso permanece apenas no navegador do aparelho (`localStorage`). Não limpe os dados do site durante um ciclo.
 

@@ -38,6 +38,12 @@
             </div>
           </div>
 
+          <div class="master-summary" id="masterSummary">
+            <span class="master-shield">◆</span>
+            <div><span class="eyebrow">MASTER CONFIGURADO</span><strong id="rewardName">Recompensa surpresa</strong><small id="cycleStatus">Ciclo ativo desde hoje</small></div>
+            <span class="verified-mark" aria-label="Configuração confirmada">✓</span>
+          </div>
+
           <button class="primary-button" id="startButton"><span>Iniciar Missão do Dia</span><b>→</b></button>
           <p class="mission-meta"><span>✦</span> 21 palavras &nbsp;•&nbsp; aproximadamente 7 minutos</p>
 
@@ -57,7 +63,7 @@
           <p class="tap-hint" id="tapHint">Toque na carta para revelar</p>
           <button class="flashcard" id="flashcard" aria-label="Virar carta">
             <span class="card-face card-front"><span class="sparkle">✦</span><strong id="studyWord">Palavra</strong><small>TOQUE PARA DESCOBRIR</small></span>
-            <span class="card-face card-back"><span class="eyebrow">SIGNIFICADO</span><strong id="cardWord">Palavra</strong><p id="definition"></p><span class="eyebrow">PALAVRAS PARECIDAS</span><span class="synonyms" id="synonyms"></span></span>
+            <span class="card-face card-back"><span class="eyebrow">SIGNIFICADO</span><strong id="cardWord">Palavra</strong><p class="definition" id="definition"></p><div class="example-box"><span>NA PRÁTICA</span><p id="example"></p></div><div class="word-relations"><div><span class="relation-label">SINÔNIMOS</span><p id="synonyms"></p></div><div><span class="relation-label antonym-label">ANTÔNIMOS</span><p id="antonyms"></p></div></div></span>
           </button>
 
           <div class="rating-panel" id="ratingPanel" aria-hidden="true">
@@ -96,9 +102,33 @@
         <button class="modal-close" value="cancel" aria-label="Fechar">✕</button>
         <span class="eyebrow">CONFIGURAÇÕES</span><h2>Personalizar Lumina</h2>
         <label>Nome da estudante<input id="studentName" maxlength="20" autocomplete="off" /></label>
-        <label>PIN do Master<input id="masterPin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="4 dígitos" /></label>
+        <label>Prêmio combinado<input id="settingsReward" maxlength="60" autocomplete="off" /></label>
+        <label>PIN atual do Master<input id="currentMasterPin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="Obrigatório para salvar" required /></label>
+        <label>Novo PIN <small>(deixe vazio para manter)</small><input id="masterPin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="4 dígitos" /></label>
         <button class="primary-button compact" value="save">Salvar</button>
         <button class="text-button" type="button" id="resetData">Reiniciar todo o progresso</button>
+      </form>
+    </dialog>
+
+    <dialog id="onboardingDialog">
+      <form class="modal-card onboarding-card" id="onboardingForm">
+        <span class="setup-icon">◆</span><span class="eyebrow">CONFIGURAÇÃO DO MASTER</span>
+        <h2>Vamos ativar o primeiro ciclo</h2>
+        <p>O responsável configura o prêmio e cria o PIN usado para validar a conquista.</p>
+        <label>Nome da estudante<input id="setupName" maxlength="20" value="Bia" required /></label>
+        <label>Prêmio após 5 dias<input id="setupReward" maxlength="60" placeholder="Ex.: escolher o filme de sábado" required /></label>
+        <div class="pin-fields"><label>Crie o PIN<input id="setupPin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="4 números" required /></label><label>Confirme o PIN<input id="setupPinConfirm" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="Repita" required /></label></div>
+        <p class="form-error" id="setupError" role="alert"></p>
+        <button class="primary-button compact">Ativar primeiro ciclo</button>
+      </form>
+    </dialog>
+
+    <dialog id="setupSuccessDialog">
+      <form method="dialog" class="modal-card success-card">
+        <span class="success-check">✓</span><span class="eyebrow">TUDO PRONTO</span><h2>Master configurado!</h2>
+        <p><strong>21 palavras por dia</strong>, pelo menos <strong>17 fáceis</strong> e <strong>5 dias consecutivos</strong> para conquistar:</p>
+        <div class="reward-confirmation" id="rewardConfirmation"></div>
+        <button class="primary-button compact">Começar o ciclo</button>
       </form>
     </dialog>
 
