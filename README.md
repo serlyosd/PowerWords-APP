@@ -41,6 +41,8 @@ Se o comando do servidor não funcionar, instale o [Python 3](https://www.python
 5. A meta diária é marcar pelo menos 17 palavras (80%) como **Foi fácil**.
 6. Após cinco metas consecutivas, o Master digita o PIN para confirmar a entrega do prêmio e iniciar outro ciclo.
 
+Para apagar um treino de teste antes de apresentar o aplicativo, toque em **Área do Master**, escolha **Reiniciar para apresentar** e informe o PIN. O treino do dia será apagado e a configuração inicial será aberta novamente.
+
 Não existe PIN padrão. O Master cria e confirma o próprio PIN no primeiro acesso. O PIN protege alterações de configuração, reinicialização e validação do prêmio.
 
 O progresso permanece apenas no navegador do aparelho (`localStorage`). Não limpe os dados do site durante um ciclo.

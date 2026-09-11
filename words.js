@@ -244,6 +244,12 @@ const ANTONYM_OVERRIDES = {
 };
 
 const EXAMPLE_OVERRIDES = {
+  Cético: "Ele permaneceu cético diante daquela explicação.",
+  Antecipar: "Ela decidiu antecipar a entrega do trabalho.", Aprimorar: "Ele pratica todos os dias para aprimorar sua escrita.",
+  Conceder: "A diretora decidiu conceder mais tempo para a atividade.", Esclarecer: "A professora voltou a explicar para esclarecer a dúvida.",
+  Hesitar: "Ela começou a hesitar antes de responder à pergunta.", Otimizar: "A equipe reorganizou as tarefas para otimizar o tempo.",
+  Poupar: "Ele resolveu poupar parte da mesada para o passeio.", Retaliar: "Ela preferiu conversar em vez de retaliar a provocação.",
+  Romper: "Foi necessário romper o silêncio para pedir ajuda.", Substituir: "A professora precisou substituir o livro danificado.",
   Empatia: "Bia demonstrou empatia ao ouvir a amiga sem interromper.", Resiliência: "Depois da nota baixa, ela estudou novamente com resiliência.",
   Procrastinação: "Deixar o trabalho para domingo foi um caso de procrastinação.", Assertividade: "Ela usou assertividade para discordar sem desrespeitar ninguém.",
   Gratidão: "Bia escreveu uma mensagem de gratidão à professora.", Ponderar: "Antes de responder, ela decidiu ponderar os dois lados.",
@@ -255,12 +261,23 @@ const EXAMPLE_OVERRIDES = {
   Zelo: "Ela cuidou dos livros da biblioteca com muito zelo.", Propósito: "Seu propósito era aprender uma palavra nova todos os dias."
 };
 
+const VERBS = new Set(["Antecipar", "Aprimorar", "Conceder", "Esclarecer", "Hesitar", "Otimizar", "Ponderar", "Poupar", "Retaliar", "Romper", "Substituir"]);
+const NOUNS = new Set(`Abundância,Alarde,Alicerce,Aliado,Âmago,Angústia,Ansiedade,Apatia,Apogeu,Arrogância,Assertividade,Astúcia,Auge,Autonomia,Autossabotagem,Bravura,Clareza,Clichê,Coincidência,Compaixão,Compreensão,Conflito,Consequência,Convicção,Curiosidade,Dedicação,Desapego,Desconfiança,Desconforto,Desespero,Desprezo,Destreza,Devoção,Dilema,Empatia,Empenho,Enigma,Entusiasmo,Estratégia,Euforia,Êxito,Expectativa,Foco,Gesto,Gratidão,Hábito,Harmonia,Hipótese,Honra,Humor,Identidade,Ilusão,Impacto,Ímpeto,Influência,Injustiça,Instinto,Introspecção,Intuição,Jornada,Julgamento,Lealdade,Legado,Lógica,Mágoa,Mérito,Motivação,Nostalgia,Nuança,Obstáculo,Orgulho,Ousadia,Pânico,Preconceito,Privilégio,Proatividade,Procrastinação,Propósito,Rancor,Receio,Reconhecimento,Redenção,Reflexão,Resiliência,Respeito,Ressalva,Revelação,Rigidez,Sarcasmo,Satisfação,Sugestão,Sussurro,Tensão,Traição,Transformação,Triunfo,Vingança,Virtude,Visão,Vislumbre,Zelo`.split(","));
+const MASCULINE_NOUNS = new Set(`Alarde,Alicerce,Aliado,Âmago,Apogeu,Auge,Clichê,Conflito,Desapego,Desconforto,Desespero,Desprezo,Dilema,Empenho,Enigma,Entusiasmo,Êxito,Foco,Gesto,Hábito,Humor,Impacto,Ímpeto,Instinto,Julgamento,Legado,Mérito,Obstáculo,Orgulho,Pânico,Preconceito,Privilégio,Propósito,Rancor,Receio,Reconhecimento,Respeito,Sarcasmo,Sussurro,Triunfo,Vislumbre,Zelo`.split(","));
+
+function naturalExample(word) {
+  const lower = word.toLocaleLowerCase("pt-BR");
+  if (VERBS.has(word)) return `Ela decidiu ${lower} sua atitude antes de continuar.`;
+  if (NOUNS.has(word)) return `${MASCULINE_NOUNS.has(word) ? "O" : "A"} ${lower} ficou evidente nas atitudes do personagem.`;
+  return `O personagem pareceu ${lower} durante toda a conversa.`;
+}
+
 const LUMINA_WORDS = WORD_NAMES.map((word) => {
   const known = DEFINITIONS[word];
   return {
     word,
     definition: known?.[0] || `Termo usado para expressar a ideia de ${word.toLowerCase()} em uma situação.`,
-    example: EXAMPLE_OVERRIDES[word] || `Bia usou “${word.toLowerCase()}” para descrever com precisão a situação.`,
+    example: EXAMPLE_OVERRIDES[word] || naturalExample(word),
     synonyms: known?.[1] || "termo semelhante, ideia próxima",
     antonyms: known?.[2] || ANTONYM_OVERRIDES[word] || "sem antônimo direto"
   };

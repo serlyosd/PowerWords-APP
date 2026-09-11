@@ -30,6 +30,8 @@
 .rating-buttons{gap:12px}.rating{min-height:78px;padding:10px 6px;color:#fff;box-shadow:0 8px 20px #4e426225;transition:transform .15s,filter .15s}.rating:active{transform:scale(.97)}
 .rating b{background:#ffffff33;color:#fff}.rating span{display:block;margin-top:5px;font-size:13px;line-height:1.15}.rating.wrong{background:linear-gradient(145deg,#ff7b76,#eb5754)}.rating.hard{background:linear-gradient(145deg,#f6bd55,#df922c)}.rating.easy{background:linear-gradient(145deg,#5fdcaf,#32ad83)}
 .master-summary{display:flex;align-items:center;gap:12px;margin:-8px 0 20px;padding:13px 15px;background:#f1edff;border:1px solid #ded5ff;border-radius:17px}.master-summary>div{display:flex;flex:1;min-width:0;flex-direction:column}.master-summary strong{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.master-summary small{font-size:10px;color:var(--muted)}.master-shield{display:grid;place-items:center;width:35px;height:35px;color:#fff;border-radius:11px;background:var(--violet)}.verified-mark{display:grid;place-items:center;width:24px;height:24px;color:#fff;border-radius:50%;background:var(--mint);font-weight:800}
+.master-button{display:flex;align-items:center;gap:12px;width:100%;margin-top:16px;padding:14px 16px;border:1px solid #ded5ff;border-radius:17px;background:#fff;color:var(--ink);text-align:left;cursor:pointer}.master-button>span:first-child{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:#f1edff;color:var(--violet)}.master-button>span:nth-child(2){display:flex;flex:1;flex-direction:column}.master-button strong{font-size:13px}.master-button small{font-size:10px;color:var(--muted)}.master-button b{font-size:24px;color:var(--violet)}
+.danger-button{width:100%;border:0;border-radius:17px;padding:15px 18px;background:var(--coral);color:#fff;font-weight:700;cursor:pointer}
 .onboarding-card{text-align:center}.onboarding-card>p{font-size:13px;color:var(--muted)}.onboarding-card label{text-align:left}.setup-icon,.success-check{display:grid;place-items:center;width:60px;height:60px;margin:0 auto 14px;color:#fff;border-radius:20px;background:linear-gradient(135deg,var(--violet),var(--cyan));font-size:25px}.pin-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.success-card{text-align:center}.success-check{border-radius:50%;background:var(--mint)}.reward-confirmation{padding:15px;margin:18px 0;border-radius:15px;background:#fff6d9;color:#855e0c;font-weight:700}
 @media(max-width:390px){.card-back{padding:21px 22px}.card-back strong{font-size:27px}.card-back .definition{font-size:14px}.example-box p{font-size:12px}.rating span{font-size:12px}}
 
@@ -75,6 +77,7 @@
             <div class="section-heading"><div><span class="eyebrow">SEU RITMO</span><h2>Últimos 5 dias</h2></div><span id="weekScore">0/5</span></div>
             <div class="day-row" id="dayRow"></div>
           </div>
+          <button class="master-button" id="masterAreaButton"><span>◆</span><span><strong>Área do Master</strong><small>Configurações e reinício para apresentação</small></span><b>›</b></button>
         </section>
 
         <section id="studyScreen" class="screen study" aria-labelledby="studyWord">
@@ -164,6 +167,17 @@
         <input id="pinAttempt" class="pin-input" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" aria-label="PIN do Master" required />
         <p class="form-error" id="pinError" role="alert"></p>
         <button class="gold-button" value="validate">Entregar prêmio e iniciar novo ciclo</button>
+      </form>
+    </dialog>
+
+    <dialog id="resetDialog">
+      <form class="modal-card" id="resetForm">
+        <button class="modal-close" type="button" id="closeReset" aria-label="Fechar">✕</button>
+        <span class="eyebrow">ÁREA DO MASTER</span><h2>Reiniciar para apresentar</h2>
+        <p>Isso apagará o treino de hoje e abrirá novamente a configuração inicial.</p>
+        <label>PIN atual do Master<input id="resetPin" class="pin-input" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" aria-label="PIN atual do Master" required /></label>
+        <p class="form-error" id="resetError" role="alert"></p>
+        <button class="danger-button" type="submit">Apagar treino e recomeçar</button>
       </form>
     </dialog>
 
@@ -415,6 +429,12 @@ const ANTONYM_OVERRIDES = {
 };
 
 const EXAMPLE_OVERRIDES = {
+  Cético: "Ele permaneceu cético diante daquela explicação.",
+  Antecipar: "Ela decidiu antecipar a entrega do trabalho.", Aprimorar: "Ele pratica todos os dias para aprimorar sua escrita.",
+  Conceder: "A diretora decidiu conceder mais tempo para a atividade.", Esclarecer: "A professora voltou a explicar para esclarecer a dúvida.",
+  Hesitar: "Ela começou a hesitar antes de responder à pergunta.", Otimizar: "A equipe reorganizou as tarefas para otimizar o tempo.",
+  Poupar: "Ele resolveu poupar parte da mesada para o passeio.", Retaliar: "Ela preferiu conversar em vez de retaliar a provocação.",
+  Romper: "Foi necessário romper o silêncio para pedir ajuda.", Substituir: "A professora precisou substituir o livro danificado.",
   Empatia: "Bia demonstrou empatia ao ouvir a amiga sem interromper.", Resiliência: "Depois da nota baixa, ela estudou novamente com resiliência.",
   Procrastinação: "Deixar o trabalho para domingo foi um caso de procrastinação.", Assertividade: "Ela usou assertividade para discordar sem desrespeitar ninguém.",
   Gratidão: "Bia escreveu uma mensagem de gratidão à professora.", Ponderar: "Antes de responder, ela decidiu ponderar os dois lados.",
@@ -426,12 +446,23 @@ const EXAMPLE_OVERRIDES = {
   Zelo: "Ela cuidou dos livros da biblioteca com muito zelo.", Propósito: "Seu propósito era aprender uma palavra nova todos os dias."
 };
 
+const VERBS = new Set(["Antecipar", "Aprimorar", "Conceder", "Esclarecer", "Hesitar", "Otimizar", "Ponderar", "Poupar", "Retaliar", "Romper", "Substituir"]);
+const NOUNS = new Set(`Abundância,Alarde,Alicerce,Aliado,Âmago,Angústia,Ansiedade,Apatia,Apogeu,Arrogância,Assertividade,Astúcia,Auge,Autonomia,Autossabotagem,Bravura,Clareza,Clichê,Coincidência,Compaixão,Compreensão,Conflito,Consequência,Convicção,Curiosidade,Dedicação,Desapego,Desconfiança,Desconforto,Desespero,Desprezo,Destreza,Devoção,Dilema,Empatia,Empenho,Enigma,Entusiasmo,Estratégia,Euforia,Êxito,Expectativa,Foco,Gesto,Gratidão,Hábito,Harmonia,Hipótese,Honra,Humor,Identidade,Ilusão,Impacto,Ímpeto,Influência,Injustiça,Instinto,Introspecção,Intuição,Jornada,Julgamento,Lealdade,Legado,Lógica,Mágoa,Mérito,Motivação,Nostalgia,Nuança,Obstáculo,Orgulho,Ousadia,Pânico,Preconceito,Privilégio,Proatividade,Procrastinação,Propósito,Rancor,Receio,Reconhecimento,Redenção,Reflexão,Resiliência,Respeito,Ressalva,Revelação,Rigidez,Sarcasmo,Satisfação,Sugestão,Sussurro,Tensão,Traição,Transformação,Triunfo,Vingança,Virtude,Visão,Vislumbre,Zelo`.split(","));
+const MASCULINE_NOUNS = new Set(`Alarde,Alicerce,Aliado,Âmago,Apogeu,Auge,Clichê,Conflito,Desapego,Desconforto,Desespero,Desprezo,Dilema,Empenho,Enigma,Entusiasmo,Êxito,Foco,Gesto,Hábito,Humor,Impacto,Ímpeto,Instinto,Julgamento,Legado,Mérito,Obstáculo,Orgulho,Pânico,Preconceito,Privilégio,Propósito,Rancor,Receio,Reconhecimento,Respeito,Sarcasmo,Sussurro,Triunfo,Vislumbre,Zelo`.split(","));
+
+function naturalExample(word) {
+  const lower = word.toLocaleLowerCase("pt-BR");
+  if (VERBS.has(word)) return `Ela decidiu ${lower} sua atitude antes de continuar.`;
+  if (NOUNS.has(word)) return `${MASCULINE_NOUNS.has(word) ? "O" : "A"} ${lower} ficou evidente nas atitudes do personagem.`;
+  return `O personagem pareceu ${lower} durante toda a conversa.`;
+}
+
 const LUMINA_WORDS = WORD_NAMES.map((word) => {
   const known = DEFINITIONS[word];
   return {
     word,
     definition: known?.[0] || `Termo usado para expressar a ideia de ${word.toLowerCase()} em uma situação.`,
-    example: EXAMPLE_OVERRIDES[word] || `Bia usou “${word.toLowerCase()}” para descrever com precisão a situação.`,
+    example: EXAMPLE_OVERRIDES[word] || naturalExample(word),
     synonyms: known?.[1] || "termo semelhante, ideia próxima",
     antonyms: known?.[2] || ANTONYM_OVERRIDES[word] || "sem antônimo direto"
   };
@@ -536,6 +567,16 @@ $("#closeStudy").addEventListener("click", () => { saveState(); refreshDashboard
 document.querySelectorAll("[data-rating]").forEach((button) => button.addEventListener("click", () => rate(button.dataset.rating)));
 $("#finishButton").addEventListener("click", () => { refreshDashboard(); state.reward ? showReward() : showScreen("dashboardScreen"); });
 $("#settingsButton").addEventListener("click", () => { $("#studentName").value = state.name; $("#settingsReward").value = state.rewardName; $("#currentMasterPin").value = ""; $("#masterPin").value = ""; $("#settingsDialog").showModal(); });
+$("#masterAreaButton").addEventListener("click", () => { $("#resetPin").value = ""; $("#resetError").textContent = ""; $("#resetDialog").showModal(); });
+$("#closeReset").addEventListener("click", () => $("#resetDialog").close());
+$("#resetForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  if ($("#resetPin").value !== state.pin) { $("#resetError").textContent = "PIN incorreto. Tente novamente."; return; }
+  if (!confirm("Apagar o treino e voltar à configuração inicial?")) return;
+  state = { ...defaults, history: [] }; session = null; saveState();
+  $("#resetDialog").close(); refreshDashboard(); $("#onboardingForm").reset();
+  $("#setupName").value = "Bia"; $("#setupError").textContent = ""; $("#onboardingDialog").showModal();
+});
 $("#settingsForm").addEventListener("submit", (event) => { if (event.submitter?.value !== "save") return; event.preventDefault(); if ($("#currentMasterPin").value !== state.pin) return toast("PIN atual incorreto."); const pin = $("#masterPin").value; if (pin && !/^\d{4}$/.test(pin)) return toast("O novo PIN precisa ter 4 números."); state.name = $("#studentName").value.trim() || "Bia"; state.rewardName = $("#settingsReward").value.trim() || state.rewardName; if (pin) state.pin = pin; saveState(); $("#settingsDialog").close(); refreshDashboard(); toast("Configuração do Master atualizada!"); });
 $("#resetData").addEventListener("click", () => { if ($("#currentMasterPin").value !== state.pin) return toast("Digite o PIN atual para reiniciar."); if (!confirm("Apagar a configuração do Master e todo o progresso?")) return; state = { ...defaults, history: [] }; saveState(); $("#settingsDialog").close(); refreshDashboard(); $("#onboardingDialog").showModal(); });
 $("#validateButton").addEventListener("click", () => { $("#pinAttempt").value = ""; $("#pinError").textContent = ""; $("#pinDialog").showModal(); });

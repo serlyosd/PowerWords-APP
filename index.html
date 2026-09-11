@@ -51,6 +51,7 @@
             <div class="section-heading"><div><span class="eyebrow">SEU RITMO</span><h2>Últimos 5 dias</h2></div><span id="weekScore">0/5</span></div>
             <div class="day-row" id="dayRow"></div>
           </div>
+          <button class="master-button" id="masterAreaButton"><span>◆</span><span><strong>Área do Master</strong><small>Configurações e reinício para apresentação</small></span><b>›</b></button>
         </section>
 
         <section id="studyScreen" class="screen study" aria-labelledby="studyWord">
@@ -140,6 +141,17 @@
         <input id="pinAttempt" class="pin-input" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" aria-label="PIN do Master" required />
         <p class="form-error" id="pinError" role="alert"></p>
         <button class="gold-button" value="validate">Entregar prêmio e iniciar novo ciclo</button>
+      </form>
+    </dialog>
+
+    <dialog id="resetDialog">
+      <form class="modal-card" id="resetForm">
+        <button class="modal-close" type="button" id="closeReset" aria-label="Fechar">✕</button>
+        <span class="eyebrow">ÁREA DO MASTER</span><h2>Reiniciar para apresentar</h2>
+        <p>Isso apagará o treino de hoje e abrirá novamente a configuração inicial.</p>
+        <label>PIN atual do Master<input id="resetPin" class="pin-input" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" aria-label="PIN atual do Master" required /></label>
+        <p class="form-error" id="resetError" role="alert"></p>
+        <button class="danger-button" type="submit">Apagar treino e recomeçar</button>
       </form>
     </dialog>
 

@@ -95,6 +95,16 @@ $("#closeStudy").addEventListener("click", () => { saveState(); refreshDashboard
 document.querySelectorAll("[data-rating]").forEach((button) => button.addEventListener("click", () => rate(button.dataset.rating)));
 $("#finishButton").addEventListener("click", () => { refreshDashboard(); state.reward ? showReward() : showScreen("dashboardScreen"); });
 $("#settingsButton").addEventListener("click", () => { $("#studentName").value = state.name; $("#settingsReward").value = state.rewardName; $("#currentMasterPin").value = ""; $("#masterPin").value = ""; $("#settingsDialog").showModal(); });
+$("#masterAreaButton").addEventListener("click", () => { $("#resetPin").value = ""; $("#resetError").textContent = ""; $("#resetDialog").showModal(); });
+$("#closeReset").addEventListener("click", () => $("#resetDialog").close());
+$("#resetForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+  if ($("#resetPin").value !== state.pin) { $("#resetError").textContent = "PIN incorreto. Tente novamente."; return; }
+  if (!confirm("Apagar o treino e voltar à configuração inicial?")) return;
+  state = { ...defaults, history: [] }; session = null; saveState();
+  $("#resetDialog").close(); refreshDashboard(); $("#onboardingForm").reset();
+  $("#setupName").value = "Bia"; $("#setupError").textContent = ""; $("#onboardingDialog").showModal();
+});
 $("#settingsForm").addEventListener("submit", (event) => { if (event.submitter?.value !== "save") return; event.preventDefault(); if ($("#currentMasterPin").value !== state.pin) return toast("PIN atual incorreto."); const pin = $("#masterPin").value; if (pin && !/^\d{4}$/.test(pin)) return toast("O novo PIN precisa ter 4 números."); state.name = $("#studentName").value.trim() || "Bia"; state.rewardName = $("#settingsReward").value.trim() || state.rewardName; if (pin) state.pin = pin; saveState(); $("#settingsDialog").close(); refreshDashboard(); toast("Configuração do Master atualizada!"); });
 $("#resetData").addEventListener("click", () => { if ($("#currentMasterPin").value !== state.pin) return toast("Digite o PIN atual para reiniciar."); if (!confirm("Apagar a configuração do Master e todo o progresso?")) return; state = { ...defaults, history: [] }; saveState(); $("#settingsDialog").close(); refreshDashboard(); $("#onboardingDialog").showModal(); });
 $("#validateButton").addEventListener("click", () => { $("#pinAttempt").value = ""; $("#pinError").textContent = ""; $("#pinDialog").showModal(); });

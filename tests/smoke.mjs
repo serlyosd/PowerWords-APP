@@ -10,9 +10,12 @@ vm.runInContext(`${wordsSource};globalThis.words = LUMINA_WORDS;`, context);
 assert.equal(context.words.length, 300, "o banco deve conter 300 palavras");
 assert.equal(new Set(context.words.map(({ word }) => word)).size, 300, "as palavras devem ser únicas");
 assert.ok(context.words.every(({ word, definition, example, synonyms, antonyms }) => word && definition && example && synonyms && antonyms), "todas as cartas devem conter conceito, exemplo, sinônimos e antônimos");
+assert.ok(context.words.every(({ example }) => !example.includes("usou “")), "as frases devem mostrar a palavra em uso, sem o antigo texto genérico");
+assert.ok(context.words.every(({ word, example }) => example.toLocaleLowerCase("pt-BR").includes(word.toLocaleLowerCase("pt-BR"))), "cada frase deve conter explicitamente a palavra estudada");
+assert.equal(context.words.find(({ word }) => word === "Cético").example, "Ele permaneceu cético diante daquela explicação.");
 
 const html = fs.readFileSync(new URL("../index.html", import.meta.url), "utf8");
-for (const id of ["dashboardScreen", "studyScreen", "resultScreen", "rewardScreen", "pinDialog", "onboardingDialog", "setupSuccessDialog", "example", "antonyms"]) {
+for (const id of ["dashboardScreen", "studyScreen", "resultScreen", "rewardScreen", "pinDialog", "onboardingDialog", "setupSuccessDialog", "resetDialog", "masterAreaButton", "example", "antonyms"]) {
   assert.match(html, new RegExp(`id=["']${id}["']`), `a interface deve conter ${id}`);
 }
 
