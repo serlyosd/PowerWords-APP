@@ -8,11 +8,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <style>
 :root{--violet:#7457f5;--cyan:#32c7e8;--mint:#57d8ad;--coral:#ff6b68;--ink:#25223a;--muted:#77738d;--paper:#fbfaf7;--card:#fff;--gold:#f7bd3b;--shadow:0 18px 55px rgba(72,57,120,.13)}
 *{box-sizing:border-box}html{min-height:100%;background:var(--paper)}body{margin:0;min-height:100vh;color:var(--ink);font:400 16px/1.55 Poppins,system-ui,sans-serif;background:radial-gradient(circle at 10% 0%,#eee9ff 0,transparent 30%),radial-gradient(circle at 90% 95%,#dff9fb 0,transparent 30%),var(--paper)}button,input{font:inherit}.app-shell{width:min(100%,520px);min-height:100vh;margin:auto;padding:0 22px 32px}.topbar{height:78px;display:flex;align-items:center;justify-content:space-between}.brand{color:var(--ink);text-decoration:none;font-size:22px;font-weight:800}.brand-mark{display:inline-grid;place-items:center;width:36px;height:36px;margin-right:8px;color:white;border-radius:12px;background:linear-gradient(135deg,var(--violet),var(--cyan));box-shadow:0 8px 18px #7457f555}.icon-button{border:0;background:#fff;color:var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;box-shadow:0 5px 18px #51487916}.screen{display:none}.screen.active{display:block;animation:enter .4s ease}@keyframes enter{from{opacity:0;transform:translateY(8px)}}.welcome-copy{margin-top:20px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--violet)}h1,h2,p{margin-top:0}h1{font-size:clamp(28px,8vw,38px);line-height:1.17;margin:8px 0}h2{font-size:20px;line-height:1.3}.welcome-copy p,.streak-card p{color:var(--muted)}.streak-card{display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;background:#fff;margin:30px 0 22px;padding:24px 20px;border-radius:28px;box-shadow:var(--shadow)}.progress-ring{--progress:0deg;width:126px;height:126px;padding:10px;border-radius:50%;background:conic-gradient(var(--violet) var(--progress),#eeecf4 0)}.progress-center{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;background:#fff}.progress-center strong{font-size:36px;line-height:1}.progress-center span{font-size:11px;color:var(--muted)}.status-pill{display:inline-block;color:#ed765e;background:#fff0e8;padding:5px 9px;border-radius:9px;font-size:10px;font-weight:800;letter-spacing:.8px}.streak-card h2{margin:10px 0 5px}.streak-card p{font-size:12px;margin:0}.primary-button,.gold-button{width:100%;border:0;border-radius:17px;padding:17px 20px;color:white;background:linear-gradient(110deg,var(--violet),#9378ff);font-weight:700;display:flex;align-items:center;justify-content:center;gap:16px;cursor:pointer;box-shadow:0 10px 25px #7457f544}.primary-button b{font-size:22px}.primary-button:disabled{background:#bbb;box-shadow:none}.mission-meta{text-align:center;color:var(--muted);font-size:12px;margin:12px 0 28px}.mission-meta span{color:var(--violet)}.week-card{background:#fff;padding:22px;border-radius:24px}.section-heading{display:flex;justify-content:space-between;align-items:center}.section-heading h2{margin:4px 0}.section-heading>span{color:var(--violet);font-weight:800}.day-row{display:flex;justify-content:space-between;margin-top:16px}.day{display:grid;gap:6px;text-align:center;color:var(--muted);font-size:10px}.day b{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#f0eef5;color:#aaa;font-size:14px}.day.success b{background:#e4fbf2;color:#27ad7e}.day.today b{outline:2px solid var(--violet);outline-offset:2px}.study{min-height:calc(100vh - 90px)}.study-header{display:flex;gap:16px;align-items:center}.session-progress{flex:1}.session-progress>div:first-child{display:flex;justify-content:space-between;font-size:11px}.session-progress span{font-weight:700;color:var(--muted)}.progress-track{height:7px;background:#e9e6ef;border-radius:9px;margin-top:8px;overflow:hidden}.progress-track span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--violet),var(--cyan));transition:width .3s}.tap-hint{text-align:center;color:var(--muted);font-size:12px;margin:28px 0 14px}.flashcard{display:block;position:relative;width:100%;height:min(50vh,410px);border:0;background:transparent;transform-style:preserve-3d;transition:transform .55s;cursor:pointer;padding:0}.flashcard.flipped{transform:rotateY(180deg)}.card-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:34px;border-radius:28px;background:white;box-shadow:var(--shadow);backface-visibility:hidden;-webkit-backface-visibility:hidden}.card-front:after{content:"";position:absolute;inset:13px;border:1px solid #eeeafc;border-radius:21px}.card-front .sparkle{font-size:28px;color:var(--violet);margin-bottom:22px}.card-front strong{font-size:clamp(28px,9vw,42px);z-index:1}.card-front small{margin-top:22px;color:#aaa;font-size:10px;font-weight:700;letter-spacing:1.3px;z-index:1}.card-back{transform:rotateY(180deg);text-align:center}.card-back strong{font-size:26px;margin:8px}.card-back p{font-size:16px}.synonyms{color:var(--violet);font-weight:700;font-size:13px}.rating-panel{opacity:0;pointer-events:none;transition:opacity .3s;margin-top:18px;text-align:center}.rating-panel.visible{opacity:1;pointer-events:auto}.rating-panel>p{font-size:12px;color:var(--muted);margin-bottom:8px}.rating-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.rating{border:0;border-radius:16px;background:white;padding:12px 4px;box-shadow:0 6px 18px #4e426214;cursor:pointer}.rating b{display:grid;place-items:center;margin:auto;width:32px;height:32px;border-radius:50%;font-size:20px}.rating span{font-size:11px;font-weight:700}.wrong b{color:var(--coral);background:#fff0ef}.hard b{color:#dc9d24;background:#fff7de}.easy b{color:#27aa7d;background:#e6fbf3}.result,.reward{text-align:center;padding-top:16vh}.result-icon{display:grid;place-items:center;margin:0 auto 20px;width:95px;height:95px;border-radius:30px;background:linear-gradient(135deg,#eee9ff,#dcfaff);color:var(--violet);font-size:42px;transform:rotate(5deg)}.result>p{color:var(--muted)}.result-score{display:flex;flex-direction:column;background:#fff;border-radius:22px;padding:22px;margin:28px 0}.result-score strong{font-size:38px;color:var(--violet)}.result-score span{font-size:12px;color:var(--muted)}.gold-ticket{position:relative;background:linear-gradient(145deg,#fffdf4,#fff2b8);border:2px solid #f2ca62;border-radius:28px;padding:42px 25px;box-shadow:0 20px 60px #c9973044}.ticket-star{display:grid;place-items:center;margin:0 auto 20px;width:80px;height:80px;color:#fff;font-size:38px;border-radius:50%;background:linear-gradient(145deg,#ffd969,#e9a724);box-shadow:0 8px 25px #d89f3c66}.gold-ticket .eyebrow{color:#ad7918}.gold-ticket p{color:#786432}.gold-button{background:linear-gradient(110deg,#e0a62a,#f4c95b);color:#4d3810;box-shadow:0 10px 25px #d6a42b44}.confetti i{position:fixed;top:-20px;width:9px;height:18px;background:var(--c);left:var(--x);animation:fall var(--d) linear var(--delay) infinite;transform:rotate(var(--r))}@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}dialog{border:0;padding:0;background:transparent;max-width:calc(100% - 30px);width:430px}dialog::backdrop{background:#201b36aa;backdrop-filter:blur(4px)}.modal-card{position:relative;background:white;border-radius:26px;padding:30px;box-shadow:var(--shadow)}.modal-close{position:absolute;right:18px;top:16px;border:0;background:transparent;font-size:18px;cursor:pointer}.modal-card h2{font-size:24px;margin:5px 0 20px}.modal-card label{display:grid;gap:7px;margin:15px 0;color:var(--muted);font-size:12px;font-weight:600}.modal-card input{width:100%;border:1px solid #dedbe7;border-radius:13px;padding:13px;outline:0}.modal-card input:focus{border-color:var(--violet);box-shadow:0 0 0 3px #7457f522}.compact{margin-top:22px;padding:13px}.text-button{width:100%;border:0;background:transparent;color:var(--coral);margin-top:14px;font-size:12px;cursor:pointer}.pin-input{text-align:center;font-size:28px;letter-spacing:12px}.form-error{min-height:20px;color:var(--coral);font-size:12px}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);background:#29253c;color:white;border-radius:12px;padding:11px 18px;font-size:12px;opacity:0;pointer-events:none;transition:.3s}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:390px){.app-shell{padding-inline:16px}.streak-card{grid-template-columns:110px 1fr;padding:20px 15px}.progress-ring{width:105px;height:105px}.card-face{padding:24px}.topbar{height:65px}.rating span{font-size:10px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.confetti{display:none}}
+
+.brand small{font-size:10px;color:var(--muted);font-weight:600}
+.version-panel{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 4px 0;color:var(--muted);font-size:11px}.version-panel button{border:0;background:transparent;color:var(--violet);font-weight:700;text-decoration:underline;cursor:pointer}
+
+/* Fluxo de estudo e Quiz — v1.3.0 */
+.study-spacer{width:44px}.front-instruction{position:absolute;top:28px;color:var(--violet);font-size:11px;font-weight:800;letter-spacing:1.2px}.flashcard{height:min(56vh,470px)}
+.card-back strong{font-size:clamp(31px,8vw,38px)}.card-back .definition{font-size:17px;line-height:1.5;font-weight:500}.listen-button{align-self:center;border:0;border-radius:12px;padding:9px 15px;margin:-3px 0 10px;background:#ece8ff;color:var(--violet);font-size:12px;font-weight:800;cursor:pointer}.example-box{padding:9px 12px;margin-bottom:9px}.example-box p{font-size:13px;margin:4px 0}.example-box p+p{padding-top:5px;border-top:1px solid #ded5ff}
+.study-navigation{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:8px;margin-top:15px}.study-navigation button{min-height:54px;border:0;border-radius:14px;font-size:11px;font-weight:750;cursor:pointer}.nav-button{background:#fff;color:var(--violet);box-shadow:0 5px 16px #4e426214}.nav-button:disabled{opacity:.35;cursor:not-allowed}.confirm-word{background:linear-gradient(135deg,var(--violet),#9177ff);color:#fff}.confirm-word.confirmed{background:var(--mint);color:#174c3b}
+.summary-screen,.quiz-screen{padding:20px 0 40px}.summary-screen>p{color:var(--muted)}.summary-list{display:grid;gap:11px;margin:22px 0}.summary-item{display:flex;gap:14px;padding:16px;background:#fff;border-radius:18px;box-shadow:0 6px 20px #51487910}.summary-item>span{display:grid;place-items:center;flex:0 0 36px;height:36px;border-radius:11px;background:#eeeaff;color:var(--violet);font-size:11px;font-weight:800}.summary-item h2{margin:0 0 4px;font-size:19px}.summary-item p{margin:0 0 5px;color:#4f4a63;font-size:13px}.summary-item small{color:var(--muted);font-size:11px}.summary-actions{display:grid;gap:10px;position:sticky;bottom:10px;padding:10px;background:#fbfaf7ee;border-radius:20px}.text-nav{border:0;background:transparent;color:var(--violet);font-weight:700;cursor:pointer}
+.quiz-heading{display:flex;align-items:center;justify-content:space-between}.quiz-heading h1{font-size:30px}.quiz-heading strong{color:var(--violet)}.quiz-card{margin:28px 0 18px;padding:26px 22px;border-radius:24px;background:#fff;box-shadow:var(--shadow)}.quiz-card p{color:var(--muted);font-size:12px}.quiz-card h2{font-size:20px;margin:0}.quiz-options{display:grid;gap:11px}.quiz-options button{min-height:58px;padding:13px 18px;border:2px solid #e4dffa;border-radius:16px;background:#fff;color:var(--ink);font-size:16px;font-weight:700;text-align:left;cursor:pointer}.quiz-options button:active{border-color:var(--violet);background:#f1edff}.quiz-note{text-align:center;margin-top:17px;color:var(--muted);font-size:11px}.review-needed{margin:-12px 0 24px;padding:15px;border-radius:16px;background:#fff7de;font-size:12px}.review-needed p{margin:4px 0 0;color:#6d5b28}
+@media(max-width:390px){.flashcard{height:min(58vh,460px)}.card-back .definition{font-size:15px}.study-navigation{grid-template-columns:1fr 1.25fr 1fr}.study-navigation button{font-size:10px;padding:5px}.word-relations p{font-size:10px}}
 
 /* Legibilidade reforçada para a experiência de estudo */
 .card-front strong{font-size:clamp(32px,10vw,47px);line-height:1.12;overflow-wrap:anywhere}
@@ -35,13 +47,18 @@
 .onboarding-card{text-align:center}.onboarding-card>p{font-size:13px;color:var(--muted)}.onboarding-card label{text-align:left}.setup-icon,.success-check{display:grid;place-items:center;width:60px;height:60px;margin:0 auto 14px;color:#fff;border-radius:20px;background:linear-gradient(135deg,var(--violet),var(--cyan));font-size:25px}.pin-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.success-card{text-align:center}.success-check{border-radius:50%;background:var(--mint)}.reward-confirmation{padding:15px;margin:18px 0;border-radius:15px;background:#fff6d9;color:#855e0c;font-weight:700}
 @media(max-width:390px){.card-back{padding:21px 22px}.card-back strong{font-size:27px}.card-back .definition{font-size:14px}.example-box p{font-size:12px}.rating span{font-size:12px}}
 
+/* Mantém a hierarquia de leitura da v1.3 acima das regras legadas. */
+.card-back strong{font-size:clamp(32px,8vw,38px)}
+.card-back .definition{font-size:17px;line-height:1.5;font-weight:500}
+@media(max-width:390px){.card-back strong{font-size:30px}.card-back .definition{font-size:16px}}
+
     </style>
     <title>Lumina</title>
   </head>
   <body>
     <div class="app-shell">
       <header class="topbar">
-        <a class="brand" href="#" aria-label="Lumina — início"><span class="brand-mark">✦</span>Lumina</a>
+        <a class="brand" href="#" aria-label="Lumina — início"><span class="brand-mark">✦</span>Lumina <small>v1.3.0</small></a>
         <button class="icon-button" id="settingsButton" aria-label="Abrir configurações">⚙</button>
       </header>
 
@@ -79,37 +96,52 @@
             <div class="section-heading"><div><span class="eyebrow">SEU RITMO</span><h2>Últimos 5 dias</h2></div><span id="weekScore">0/5</span></div>
             <div class="day-row" id="dayRow"></div>
           </div>
+          <div class="version-panel"><span>Versão instalada: <strong>1.3.0</strong></span><button type="button" id="updateButton">Buscar atualização</button></div>
         </section>
 
         <section id="studyScreen" class="screen study" aria-labelledby="studyWord">
           <div class="study-header">
             <button class="icon-button" id="closeStudy" aria-label="Sair da missão">✕</button>
             <div class="session-progress"><div><span>MISSÃO DE HOJE</span><strong id="cardCount">1 de 21</strong></div><div class="progress-track"><span id="sessionProgress"></span></div></div>
-            <button class="icon-button" id="speakButton" aria-label="Ouvir palavra">🔊</button>
+            <span class="study-spacer" aria-hidden="true"></span>
           </div>
 
           <p class="tap-hint" id="tapHint">Toque na carta para revelar</p>
-          <button class="flashcard" id="flashcard" aria-label="Virar carta">
-            <span class="card-face card-front"><span class="sparkle">✦</span><strong id="studyWord">Palavra</strong><small>TOQUE PARA DESCOBRIR</small></span>
-            <span class="card-face card-back"><span class="eyebrow">SIGNIFICADO</span><strong id="cardWord">Palavra</strong><p class="definition" id="definition"></p><div class="example-box"><span>NA PRÁTICA</span><p id="example"></p></div><div class="word-relations"><div><span class="relation-label">SINÔNIMOS</span><p id="synonyms"></p></div><div><span class="relation-label antonym-label">ANTÔNIMOS</span><p id="antonyms"></p></div></div></span>
-          </button>
+          <div class="flashcard" id="flashcard" role="button" tabindex="0" aria-label="Virar carta">
+            <div class="card-face card-front"><span class="front-instruction">FALE A PALAVRA EM VOZ ALTA</span><span class="sparkle">✦</span><strong id="studyWord">Palavra</strong><small>TOQUE PARA DESCOBRIR</small></div>
+            <div class="card-face card-back"><span class="eyebrow">SIGNIFICADO</span><strong id="cardWord">Palavra</strong><p class="definition" id="definition"></p><button type="button" class="listen-button" id="cardSpeakButton">🔊 Ouvir 2 vezes</button><div class="example-box"><span>NA PRÁTICA</span><p id="example"></p><p id="example2"></p></div><div class="word-relations"><div><span class="relation-label">SINÔNIMOS</span><p id="synonyms"></p></div><div><span class="relation-label antonym-label">ANTÔNIMOS</span><p id="antonyms"></p></div></div></div>
+          </div>
 
-          <div class="rating-panel" id="ratingPanel" aria-hidden="true">
-            <p>Como foi lembrar dessa palavra?</p>
-            <div class="rating-buttons">
-              <button data-rating="wrong" class="rating wrong"><b>×</b><span>Errei</span></button>
-              <button data-rating="hard" class="rating hard"><b>~</b><span>Pensei muito</span></button>
-              <button data-rating="easy" class="rating easy"><b>✓</b><span>Foi fácil</span></button>
-            </div>
+          <div class="study-navigation">
+            <button type="button" id="previousCard" class="nav-button">← Anterior</button>
+            <button type="button" id="confirmCard" class="confirm-word">Entendi esta palavra ✓</button>
+            <button type="button" id="nextCard" class="nav-button">Próxima →</button>
           </div>
         </section>
 
+        <section id="summaryScreen" class="screen summary-screen" aria-labelledby="summaryTitle">
+          <span class="eyebrow">REVISÃO FINAL</span><h1 id="summaryTitle">Suas 21 palavras</h1>
+          <p>Revise os conceitos e sinônimos antes do Quiz.</p>
+          <div class="summary-list" id="summaryList"></div>
+          <div class="summary-actions"><button class="text-nav" id="backToCards">← Voltar aos cards</button><button class="primary-button" id="startQuizButton"><span>Estou pronta para o Quiz</span><b>→</b></button></div>
+        </section>
+
+        <section id="quizScreen" class="screen quiz-screen" aria-labelledby="quizTitle">
+          <span class="eyebrow">QUIZ DO DIA</span><div class="quiz-heading"><h1 id="quizTitle">Qual é a palavra?</h1><strong id="quizCount">1 de 21</strong></div>
+          <div class="progress-track"><span id="quizProgress"></span></div>
+          <div class="quiz-card"><p>Qual palavra corresponde a este conceito?</p><h2 id="quizDefinition"></h2></div>
+          <div class="quiz-options" id="quizOptions"></div>
+          <p class="quiz-note">O resultado será mostrado somente ao final.</p>
+        </section>
+
         <section id="resultScreen" class="screen result" aria-labelledby="resultTitle">
-          <div class="result-icon" id="resultIcon">✦</div>
+          <div class="confetti" id="resultConfetti" aria-hidden="true"></div>
+          <div class="result-icon" id="resultIcon">😊</div>
           <span class="eyebrow">MISSÃO CONCLUÍDA</span>
           <h1 id="resultTitle">Mandou muito bem!</h1>
           <p id="resultCopy"></p>
-          <div class="result-score"><strong id="easyScore">0</strong><span>palavras fáceis de 21</span></div>
+          <div class="result-score"><strong id="quizScore">0/21</strong><span id="quizPercent">0% de acertos</span></div>
+          <div class="review-needed" id="reviewNeeded"></div>
           <button class="primary-button" id="finishButton"><span>Voltar ao início</span><b>→</b></button>
         </section>
 
@@ -447,23 +479,59 @@ const EXAMPLE_OVERRIDES = {
   Zelo: "Ela cuidou dos livros da biblioteca com muito zelo.", Propósito: "Seu propósito era aprender uma palavra nova todos os dias."
 };
 
+const SECOND_EXAMPLE_OVERRIDES = {
+  Cético: "Meu pai ficou cético ao ouvir uma notícia sem nenhuma prova.",
+  Antecipar: "O time tentou antecipar a jogada do adversário.", Aprimorar: "A leitura diária ajuda a aprimorar o vocabulário.",
+  Conceder: "O juiz decidiu conceder uma nova chance ao atleta.", Esclarecer: "A reunião serviu para esclarecer o que havia acontecido.",
+  Hesitar: "Não devemos hesitar quando alguém precisa de ajuda.", Otimizar: "O novo aplicativo ajuda a otimizar a rotina de estudos.",
+  Ponderar: "Meu pai preferiu ponderar os riscos antes da viagem.", Poupar: "Apagar as luzes ajuda a poupar energia.",
+  Retaliar: "O jogador não quis retaliar depois da falta.", Romper: "Ela decidiu romper o acordo que já não era justo.",
+  Substituir: "Podemos substituir o açúcar por uma fruta na receita.",
+  Empatia: "A enfermeira demonstrou empatia com o paciente assustado.", Resiliência: "O atleta mostrou resiliência ao voltar a treinar depois da lesão.",
+  Procrastinação: "A procrastinação fez o prazo do projeto ficar apertado.", Assertividade: "Com assertividade, João recusou o convite sem ser grosseiro.",
+  Gratidão: "Ela sentiu gratidão por toda a ajuda que recebeu.", Autonomia: "O jovem ganhou autonomia para cuidar da própria rotina.",
+  Altruísta: "A médica teve uma atitude altruísta ao atender como voluntária.", Perspicaz: "O detetive foi perspicaz ao notar a pequena diferença.",
+  Conciso: "O aviso foi conciso e todos entenderam rapidamente.", Coerente: "Sua decisão foi coerente com aquilo que havia prometido.",
+  Efêmero: "O sucesso daquele vídeo foi efêmero e logo desapareceu.", Intrépido: "O explorador intrépido atravessou a floresta com coragem.",
+  Sutil: "O perfume tinha um aroma sutil de flores.", Versátil: "Aquela jogadora versátil atua em várias posições.",
+  Zelo: "O jardineiro tratou cada planta com zelo.", Propósito: "O projeto nasceu com o propósito de ajudar a comunidade."
+};
+
 const VERBS = new Set(["Antecipar", "Aprimorar", "Conceder", "Esclarecer", "Hesitar", "Otimizar", "Ponderar", "Poupar", "Retaliar", "Romper", "Substituir"]);
 const NOUNS = new Set(`Abundância,Alarde,Alicerce,Aliado,Âmago,Angústia,Ansiedade,Apatia,Apogeu,Arrogância,Assertividade,Astúcia,Auge,Autonomia,Autossabotagem,Bravura,Clareza,Clichê,Coincidência,Compaixão,Compreensão,Conflito,Consequência,Convicção,Curiosidade,Dedicação,Desapego,Desconfiança,Desconforto,Desespero,Desprezo,Destreza,Devoção,Dilema,Empatia,Empenho,Enigma,Entusiasmo,Estratégia,Euforia,Êxito,Expectativa,Foco,Gesto,Gratidão,Hábito,Harmonia,Hipótese,Honra,Humor,Identidade,Ilusão,Impacto,Ímpeto,Influência,Injustiça,Instinto,Introspecção,Intuição,Jornada,Julgamento,Lealdade,Legado,Lógica,Mágoa,Mérito,Motivação,Nostalgia,Nuança,Obstáculo,Orgulho,Ousadia,Pânico,Preconceito,Privilégio,Proatividade,Procrastinação,Propósito,Rancor,Receio,Reconhecimento,Redenção,Reflexão,Resiliência,Respeito,Ressalva,Revelação,Rigidez,Sarcasmo,Satisfação,Sugestão,Sussurro,Tensão,Traição,Transformação,Triunfo,Vingança,Virtude,Visão,Vislumbre,Zelo`.split(","));
 const MASCULINE_NOUNS = new Set(`Alarde,Alicerce,Aliado,Âmago,Apogeu,Auge,Clichê,Conflito,Desapego,Desconforto,Desespero,Desprezo,Dilema,Empenho,Enigma,Entusiasmo,Êxito,Foco,Gesto,Hábito,Humor,Impacto,Ímpeto,Instinto,Julgamento,Legado,Mérito,Obstáculo,Orgulho,Pânico,Preconceito,Privilégio,Propósito,Rancor,Receio,Reconhecimento,Respeito,Sarcasmo,Sussurro,Triunfo,Vislumbre,Zelo`.split(","));
 
-function naturalExample(word) {
+function naturalExample(word, index) {
   const lower = word.toLocaleLowerCase("pt-BR");
   if (VERBS.has(word)) return `Ela decidiu ${lower} sua atitude antes de continuar.`;
-  if (NOUNS.has(word)) return `${MASCULINE_NOUNS.has(word) ? "O" : "A"} ${lower} ficou evidente nas atitudes do personagem.`;
-  return `O personagem pareceu ${lower} durante toda a conversa.`;
+  const article = MASCULINE_NOUNS.has(word) ? "o" : "a";
+  if (NOUNS.has(word)) {
+    const templates = [`Todos perceberam ${article} ${lower} durante a conversa.`, `${article === "o" ? "O" : "A"} ${lower} influenciou a decisão daquele grupo.`, `A situação revelou ${article} ${lower} que ninguém havia notado.`];
+    return templates[index % templates.length];
+  }
+  const templates = [`A atitude foi considerada ${lower} por quem acompanhou o caso.`, `Durante a conversa, o comentário pareceu ${lower}.`, `Todos descreveram aquele momento como ${lower}.`];
+  return templates[index % templates.length];
 }
 
-const LUMINA_WORDS = WORD_NAMES.map((word) => {
+function secondNaturalExample(word, index) {
+  const lower = word.toLocaleLowerCase("pt-BR");
+  const article = MASCULINE_NOUNS.has(word) ? "o" : "a";
+  if (VERBS.has(word)) return `Naquela situação, foi importante ${lower} antes de tomar uma decisão.`;
+  if (NOUNS.has(word)) {
+    const templates = [`Naquele dia, ${article} ${lower} marcou a experiência da turma.`, `A família conversou sobre ${article} ${lower} durante o jantar.`, `A reportagem mostrou como ${article} ${lower} afetou a comunidade.`];
+    return templates[(index + 1) % templates.length];
+  }
+  const templates = [`“Achei esse resultado ${lower}”, comentou a estudante.`, `O professor apresentou um exemplo ${lower} durante a aula.`, `A notícia causou um efeito ${lower} em todos.`];
+  return templates[(index + 1) % templates.length];
+}
+
+const LUMINA_WORDS = WORD_NAMES.map((word, index) => {
   const known = DEFINITIONS[word];
   return {
     word,
     definition: known?.[0] || `Termo usado para expressar a ideia de ${word.toLowerCase()} em uma situação.`,
-    example: EXAMPLE_OVERRIDES[word] || naturalExample(word),
+    example: EXAMPLE_OVERRIDES[word] || naturalExample(word, index),
+    example2: SECOND_EXAMPLE_OVERRIDES[word] || secondNaturalExample(word, index),
     synonyms: known?.[1] || "termo semelhante, ideia próxima",
     antonyms: known?.[2] || ANTONYM_OVERRIDES[word] || "sem antônimo direto"
   };
@@ -472,11 +540,15 @@ const LUMINA_WORDS = WORD_NAMES.map((word) => {
     </script>
     <script>
 const STORAGE_KEY = "lumina-progress-v1";
-const SUCCESS_TARGET = 17;
+const APP_VERSION = "1.3.0";
+const SUCCESS_TARGET = 15;
 const SESSION_SIZE = 21;
 const defaults = { name: "Bia", pin: "", masterConfigured: false, rewardName: "", cycleStarted: "", streak: 0, history: [], reward: false, activeSession: null };
 let state = loadState();
 let session = null;
+let speechRun = 0;
+let touchStartX = 0;
+let suppressCardClick = false;
 
 const $ = (selector) => document.querySelector(selector);
 const screens = [...document.querySelectorAll(".screen")];
@@ -492,6 +564,12 @@ function dateOffset(days) { const date = new Date(); date.setDate(date.getDate()
 function seededSelection(date) {
   const seed = [...date].reduce((sum, char) => sum + char.charCodeAt(0), 0);
   return Array.from({ length: SESSION_SIZE }, (_, index) => LUMINA_WORDS[(seed * 13 + index * 47) % LUMINA_WORDS.length]);
+}
+function sessionCards() { return seededSelection(session.date); }
+function freshSession() { return { date: todayKey(), phase: "study", index: 0, confirmed: [], flipped: false, quizIndex: 0, answers: [] }; }
+function normalizeSession(saved) {
+  if (!saved || saved.date !== todayKey()) return freshSession();
+  return { ...freshSession(), ...saved, confirmed: saved.confirmed || [], answers: saved.answers || [] };
 }
 function refreshDashboard() {
   const successful = state.history.filter((item) => item.success);
@@ -514,85 +592,131 @@ function refreshDashboard() {
   $("#startButton span").textContent = completedToday ? "Missão de hoje concluída" : state.activeSession ? "Continuar Missão do Dia" : "Iniciar Missão do Dia";
 }
 function startSession() {
-  session = state.activeSession?.date === todayKey() ? state.activeSession : { date: todayKey(), index: 0, ratings: [], flipped: false };
-  state.activeSession = session; saveState(); showScreen("studyScreen"); renderCard();
+  session = normalizeSession(state.activeSession);
+  state.activeSession = session; saveState();
+  if (session.phase === "quiz") { showScreen("quizScreen"); renderQuiz(); }
+  else if (session.phase === "summary") showSummary();
+  else { showScreen("studyScreen"); renderCard(); }
 }
 function renderCard() {
-  const word = seededSelection(session.date)[session.index];
+  const word = sessionCards()[session.index];
   $("#studyWord").textContent = word.word; $("#cardWord").textContent = word.word;
-  $("#definition").textContent = word.definition; $("#example").textContent = word.example; $("#synonyms").textContent = word.synonyms; $("#antonyms").textContent = word.antonyms;
+  $("#definition").textContent = word.definition; $("#example").textContent = word.example; $("#example2").textContent = word.example2;
+  $("#synonyms").textContent = word.synonyms; $("#antonyms").textContent = word.antonyms;
   $("#cardCount").textContent = `${session.index + 1} de ${SESSION_SIZE}`;
-  $("#sessionProgress").style.width = `${(session.index / SESSION_SIZE) * 100}%`;
-  $("#flashcard").classList.remove("flipped"); $("#ratingPanel").classList.remove("visible");
-  $("#ratingPanel").setAttribute("aria-hidden", "true"); $("#tapHint").textContent = "Toque na carta para revelar";
-  setTimeout(speakCurrentWord, 250);
+  $("#sessionProgress").style.width = `${((session.index + 1) / SESSION_SIZE) * 100}%`;
+  $("#flashcard").classList.toggle("flipped", Boolean(session.flipped));
+  $("#tapHint").textContent = session.flipped ? "Confira o significado e confirme quando entender" : "Toque na carta para revelar";
+  const confirmed = session.confirmed.includes(session.index);
+  $("#confirmCard").textContent = confirmed ? "✓ Palavra confirmada" : "Entendi esta palavra ✓";
+  $("#confirmCard").classList.toggle("confirmed", confirmed);
+  $("#previousCard").disabled = session.index === 0;
+  $("#nextCard").disabled = !confirmed;
+  $("#nextCard").textContent = session.index === SESSION_SIZE - 1 ? "Ver resumo →" : "Próxima →";
 }
 function flipCard() {
-  if ($("#flashcard").classList.contains("flipped")) return;
-  $("#flashcard").classList.add("flipped"); $("#ratingPanel").classList.add("visible");
-  $("#ratingPanel").setAttribute("aria-hidden", "false"); $("#tapHint").textContent = "Agora avalie como foi lembrar";
+  session.flipped = !session.flipped; state.activeSession = session; saveState(); renderCard();
+  if (session.flipped) speakWordTwice();
 }
-function rate(rating) {
-  if (!$("#flashcard").classList.contains("flipped")) return;
-  session.ratings.push(rating); session.index += 1; state.activeSession = session; saveState();
-  if (session.index >= SESSION_SIZE) finishSession(); else renderCard();
+function confirmCurrentCard() {
+  if (!session.flipped) { toast("Vire a carta e leia o significado primeiro."); return; }
+  if (!session.confirmed.includes(session.index)) session.confirmed.push(session.index);
+  state.activeSession = session; saveState(); renderCard();
 }
-function finishSession() {
-  const easy = session.ratings.filter((rating) => rating === "easy").length;
-  const success = easy >= SUCCESS_TARGET;
+function moveCard(direction) {
+  const next = session.index + direction;
+  if (direction > 0 && !session.confirmed.includes(session.index)) return;
+  if (next >= SESSION_SIZE) { session.phase = "summary"; state.activeSession = session; saveState(); showSummary(); return; }
+  if (next < 0) return;
+  session.index = next; session.flipped = false; state.activeSession = session; saveState(); renderCard();
+}
+function speakWordTwice() {
+  if (!session || !("speechSynthesis" in window)) return;
+  const run = ++speechRun; const word = sessionCards()[session.index].word; speechSynthesis.cancel();
+  const speak = (remaining) => {
+    if (run !== speechRun || remaining === 0) return;
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = "pt-BR"; utterance.rate = 0.78;
+    utterance.onend = () => setTimeout(() => speak(remaining - 1), 450);
+    speechSynthesis.speak(utterance);
+  };
+  speak(2);
+}
+function showSummary() {
+  session.phase = "summary"; state.activeSession = session; saveState();
+  $("#summaryList").innerHTML = sessionCards().map((word, index) => `<article class="summary-item"><span>${String(index + 1).padStart(2, "0")}</span><div><h2>${escapeHtml(word.word)}</h2><p>${escapeHtml(word.definition)}</p><small><b>Sinônimos:</b> ${escapeHtml(word.synonyms)}</small></div></article>`).join("");
+  showScreen("summaryScreen");
+}
+function quizOrder() { return Array.from({ length: SESSION_SIZE }, (_, index) => (index * 8 + 5) % SESSION_SIZE); }
+function quizOptions(cardIndex, questionIndex) {
+  const cards = sessionCards();
+  const indexes = [cardIndex, (cardIndex + 5) % SESSION_SIZE, (cardIndex + 10) % SESSION_SIZE, (cardIndex + 15) % SESSION_SIZE];
+  const rotation = questionIndex % 4;
+  return [...indexes.slice(rotation), ...indexes.slice(0, rotation)].map((index) => cards[index]);
+}
+function beginQuiz() {
+  if (!confirm("O Quiz só pode ser respondido uma vez hoje. Deseja começar agora?")) return;
+  session.phase = "quiz"; session.quizIndex = 0; session.answers = []; state.activeSession = session; saveState(); showScreen("quizScreen"); renderQuiz();
+}
+function renderQuiz() {
+  const order = quizOrder(); const cardIndex = order[session.quizIndex]; const word = sessionCards()[cardIndex];
+  $("#quizCount").textContent = `${session.quizIndex + 1} de ${SESSION_SIZE}`;
+  $("#quizProgress").style.width = `${(session.quizIndex / SESSION_SIZE) * 100}%`;
+  $("#quizDefinition").textContent = word.definition;
+  $("#quizOptions").innerHTML = quizOptions(cardIndex, session.quizIndex).map((option) => `<button type="button" data-answer="${escapeHtml(option.word)}">${escapeHtml(option.word)}</button>`).join("");
+}
+function answerQuiz(selected) {
+  const order = quizOrder(); const correct = sessionCards()[order[session.quizIndex]].word;
+  session.answers.push({ word: correct, selected, correct: selected === correct }); session.quizIndex += 1;
+  state.activeSession = session; saveState();
+  if (session.quizIndex >= SESSION_SIZE) finishQuiz(); else renderQuiz();
+}
+function finishQuiz() {
+  const score = session.answers.filter((answer) => answer.correct).length;
+  const percent = Math.round((score / SESSION_SIZE) * 100); const success = score >= SUCCESS_TARGET;
   const yesterdaySuccessful = state.history.some((item) => item.date === dateOffset(-1) && item.success);
   state.streak = success ? (yesterdaySuccessful ? state.streak + 1 : 1) : 0;
-  state.history = [...state.history.filter((item) => item.date !== todayKey()), { date: todayKey(), success, easy }].slice(-30);
-  state.activeSession = null;
-  if (state.streak >= 5) state.reward = true;
-  saveState(); $("#easyScore").textContent = easy;
-  $("#resultIcon").textContent = success ? "✦" : "↻";
-  $("#resultTitle").textContent = success ? "Mandou muito bem!" : "Cada tentativa ilumina!";
-  $("#resultCopy").textContent = success ? "Meta diária alcançada. Mais um brilho no seu ciclo!" : `Você precisa marcar “Foi fácil” em ${SUCCESS_TARGET} palavras. Amanhã começa uma nova sequência.`;
-  showScreen("resultScreen"); session = null;
-}
-function speakCurrentWord() {
-  if (!session || !("speechSynthesis" in window)) return;
-  speechSynthesis.cancel(); const utterance = new SpeechSynthesisUtterance(seededSelection(session.date)[session.index].word);
-  utterance.lang = "pt-BR"; utterance.rate = 0.82; speechSynthesis.speak(utterance);
+  state.history = [...state.history.filter((item) => item.date !== todayKey()), { date: todayKey(), success, score, percent }].slice(-30);
+  state.activeSession = null; if (state.streak >= 5) state.reward = true; saveState();
+  $("#resultIcon").textContent = success ? "🥳" : "🌱";
+  $("#resultTitle").textContent = success ? "Meta do dia alcançada!" : "Você está aprendendo!";
+  $("#resultCopy").textContent = success ? "Parabéns! Você superou a meta de 70% e iluminou mais um dia." : "Amanhã será uma nova oportunidade para fortalecer essas palavras.";
+  $("#quizScore").textContent = `${score}/${SESSION_SIZE}`; $("#quizPercent").textContent = `${percent}% de acertos`;
+  const missed = session.answers.filter((answer) => !answer.correct).map((answer) => answer.word);
+  $("#reviewNeeded").innerHTML = missed.length ? `<b>Revise depois:</b><p>${missed.map(escapeHtml).join(", ")}</p>` : "<b>Você acertou todas as palavras!</b>";
+  if (success) createConfetti(); showScreen("resultScreen"); session = null;
 }
 function showReward() { createConfetti(); $("#rewardTitle").textContent = `Você conquistou: ${state.rewardName}!`; showScreen("rewardScreen"); }
-function createConfetti() { $("#confetti").innerHTML = Array.from({ length: 50 }, (_, i) => `<i style="--x:${(i * 37) % 100}%;--c:${["#7457f5","#32c7e8","#f7bd3b","#ff6b68","#57d8ad"][i % 5]};--d:${3 + i % 4}s;--delay:-${i % 5}s;--r:${i * 29}deg"></i>`).join(""); }
+function createConfetti() { const pieces = Array.from({ length: 50 }, (_, i) => `<i style="--x:${(i * 37) % 100}%;--c:${["#7457f5","#32c7e8","#f7bd3b","#ff6b68","#57d8ad"][i % 5]};--d:${3 + i % 4}s;--delay:-${i % 5}s;--r:${i * 29}deg"></i>`).join(""); document.querySelectorAll(".confetti").forEach((element) => { element.innerHTML = pieces; }); }
 function toast(message) { const el = $("#toast"); el.textContent = message; el.classList.add("show"); setTimeout(() => el.classList.remove("show"), 2400); }
 function escapeHtml(value) { const node = document.createElement("span"); node.textContent = value; return node.innerHTML; }
 
 $("#startButton").addEventListener("click", startSession);
-$("#flashcard").addEventListener("click", flipCard);
-$("#speakButton").addEventListener("click", speakCurrentWord);
-$("#closeStudy").addEventListener("click", () => { saveState(); refreshDashboard(); showScreen("dashboardScreen"); });
-document.querySelectorAll("[data-rating]").forEach((button) => button.addEventListener("click", () => rate(button.dataset.rating)));
+$("#flashcard").addEventListener("click", (event) => { if (suppressCardClick) { suppressCardClick = false; return; } if (!event.target.closest("button")) flipCard(); });
+$("#flashcard").addEventListener("keydown", (event) => { if ((event.key === "Enter" || event.key === " ") && !event.target.closest("button")) { event.preventDefault(); flipCard(); } });
+$("#flashcard").addEventListener("touchstart", (event) => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
+$("#flashcard").addEventListener("touchend", (event) => { const distance = event.changedTouches[0].clientX - touchStartX; if (Math.abs(distance) < 55) return; suppressCardClick = true; moveCard(distance > 0 ? -1 : 1); }, { passive: true });
+$("#cardSpeakButton").addEventListener("click", (event) => { event.stopPropagation(); speakWordTwice(); });
+$("#confirmCard").addEventListener("click", confirmCurrentCard);
+$("#previousCard").addEventListener("click", () => moveCard(-1));
+$("#nextCard").addEventListener("click", () => moveCard(1));
+$("#closeStudy").addEventListener("click", () => { speechRun += 1; if ("speechSynthesis" in window) speechSynthesis.cancel(); saveState(); refreshDashboard(); showScreen("dashboardScreen"); });
+$("#backToCards").addEventListener("click", () => { session.phase = "study"; session.index = SESSION_SIZE - 1; session.flipped = true; state.activeSession = session; saveState(); showScreen("studyScreen"); renderCard(); });
+$("#startQuizButton").addEventListener("click", beginQuiz);
+$("#quizOptions").addEventListener("click", (event) => { const button = event.target.closest("[data-answer]"); if (button) answerQuiz(button.dataset.answer); });
 $("#finishButton").addEventListener("click", () => { refreshDashboard(); state.reward ? showReward() : showScreen("dashboardScreen"); });
 $("#settingsButton").addEventListener("click", () => { $("#studentName").value = state.name; $("#settingsReward").value = state.rewardName; $("#currentMasterPin").value = ""; $("#masterPin").value = ""; $("#settingsDialog").showModal(); });
+$("#updateButton")?.addEventListener("click", async () => { $("#updateButton").textContent = "Atualizando…"; if ("caches" in window) await Promise.all((await caches.keys()).map((key) => caches.delete(key))); if ("serviceWorker" in navigator) await Promise.all((await navigator.serviceWorker.getRegistrations()).map((registration) => registration.unregister())); location.replace(`${location.origin}${location.pathname}?v=${APP_VERSION}&atualizar=${Date.now()}`); });
 $("#masterAreaButton")?.addEventListener("click", () => { $("#resetPin").value = ""; $("#resetError").textContent = ""; $("#resetDialog").showModal(); });
 $("#closeReset")?.addEventListener("click", () => $("#resetDialog").close());
-$("#resetForm")?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if ($("#resetPin").value !== state.pin) { $("#resetError").textContent = "PIN incorreto. Tente novamente."; return; }
-  if (!confirm("Apagar o treino e voltar à configuração inicial?")) return;
-  state = { ...defaults, history: [] }; session = null; saveState();
-  $("#resetDialog").close(); refreshDashboard(); $("#onboardingForm").reset();
-  $("#setupName").value = "Bia"; $("#setupError").textContent = ""; $("#onboardingDialog").showModal();
-});
+$("#resetForm")?.addEventListener("submit", (event) => { event.preventDefault(); if ($("#resetPin").value !== state.pin) { $("#resetError").textContent = "PIN incorreto. Tente novamente."; return; } if (!confirm("Apagar o treino e voltar à configuração inicial?")) return; state = { ...defaults, history: [] }; session = null; saveState(); $("#resetDialog").close(); refreshDashboard(); $("#onboardingForm").reset(); $("#setupName").value = "Bia"; $("#setupError").textContent = ""; $("#onboardingDialog").showModal(); });
 $("#settingsForm").addEventListener("submit", (event) => { if (event.submitter?.value !== "save") return; event.preventDefault(); if ($("#currentMasterPin").value !== state.pin) return toast("PIN atual incorreto."); const pin = $("#masterPin").value; if (pin && !/^\d{4}$/.test(pin)) return toast("O novo PIN precisa ter 4 números."); state.name = $("#studentName").value.trim() || "Bia"; state.rewardName = $("#settingsReward").value.trim() || state.rewardName; if (pin) state.pin = pin; saveState(); $("#settingsDialog").close(); refreshDashboard(); toast("Configuração do Master atualizada!"); });
 $("#resetData").addEventListener("click", () => { if ($("#currentMasterPin").value !== state.pin) return toast("Digite o PIN atual para reiniciar."); if (!confirm("Apagar a configuração do Master e todo o progresso?")) return; state = { ...defaults, history: [] }; saveState(); $("#settingsDialog").close(); refreshDashboard(); $("#onboardingDialog").showModal(); });
 $("#validateButton").addEventListener("click", () => { $("#pinAttempt").value = ""; $("#pinError").textContent = ""; $("#pinDialog").showModal(); });
 $("#pinForm").addEventListener("submit", (event) => { if (event.submitter?.value !== "validate") return; event.preventDefault(); if ($("#pinAttempt").value !== state.pin) { $("#pinError").textContent = "PIN incorreto. Peça ajuda ao Master."; return; } state.streak = 0; state.reward = false; state.history = []; state.cycleStarted = todayKey(); saveState(); $("#pinDialog").close(); refreshDashboard(); showScreen("dashboardScreen"); toast("Prêmio entregue! Um novo ciclo começou."); });
+$("#onboardingForm").addEventListener("submit", (event) => { event.preventDefault(); const pin = $("#setupPin").value; const confirmation = $("#setupPinConfirm").value; if (!/^\d{4}$/.test(pin)) { $("#setupError").textContent = "Crie um PIN com exatamente 4 números."; return; } if (pin !== confirmation) { $("#setupError").textContent = "Os dois PINs não são iguais."; return; } state = { ...state, name: $("#setupName").value.trim() || "Bia", rewardName: $("#setupReward").value.trim(), pin, masterConfigured: true, cycleStarted: todayKey(), streak: 0, history: [], reward: false, activeSession: null }; saveState(); $("#onboardingDialog").close(); $("#rewardConfirmation").textContent = state.rewardName; refreshDashboard(); $("#setupSuccessDialog").showModal(); });
 
-$("#onboardingForm").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const pin = $("#setupPin").value; const confirmation = $("#setupPinConfirm").value;
-  if (!/^\d{4}$/.test(pin)) { $("#setupError").textContent = "Crie um PIN com exatamente 4 números."; return; }
-  if (pin !== confirmation) { $("#setupError").textContent = "Os dois PINs não são iguais."; return; }
-  state = { ...state, name: $("#setupName").value.trim() || "Bia", rewardName: $("#setupReward").value.trim(), pin, masterConfigured: true, cycleStarted: todayKey(), streak: 0, history: [], reward: false, activeSession: null };
-  saveState(); $("#onboardingDialog").close(); $("#rewardConfirmation").textContent = state.rewardName; refreshDashboard(); $("#setupSuccessDialog").showModal();
-});
-
-if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("service-worker.js?v=4").then((registration) => registration.update());
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("service-worker.js?v=6").then((registration) => registration.update());
 refreshDashboard(); if (!state.masterConfigured) $("#onboardingDialog").showModal(); else if (state.reward) showReward();
 
     </script>

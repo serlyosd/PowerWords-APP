@@ -1,5 +1,5 @@
-const CACHE = "lumina-v4";
-const ASSETS = ["./", "./index.html", "./styles.css?v=1.1.1", "./words.js?v=1.1.1", "./app.js?v=1.1.1", "./manifest.webmanifest"];
+const CACHE = "lumina-v6";
+const ASSETS = ["./", "./index.html", "./styles.css?v=1.3.0", "./words.js?v=1.3.0", "./app.js?v=1.3.0", "./manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -20,7 +20,7 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
   event.respondWith(
-    fetch(event.request)
+    fetch(event.request, { cache: "no-store" })
       .then((response) => {
         if (response.ok && new URL(event.request.url).origin === self.location.origin) {
           caches.open(CACHE).then((cache) => cache.put(event.request, response.clone()));

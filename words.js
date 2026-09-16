@@ -261,23 +261,59 @@ const EXAMPLE_OVERRIDES = {
   Zelo: "Ela cuidou dos livros da biblioteca com muito zelo.", Propósito: "Seu propósito era aprender uma palavra nova todos os dias."
 };
 
+const SECOND_EXAMPLE_OVERRIDES = {
+  Cético: "Meu pai ficou cético ao ouvir uma notícia sem nenhuma prova.",
+  Antecipar: "O time tentou antecipar a jogada do adversário.", Aprimorar: "A leitura diária ajuda a aprimorar o vocabulário.",
+  Conceder: "O juiz decidiu conceder uma nova chance ao atleta.", Esclarecer: "A reunião serviu para esclarecer o que havia acontecido.",
+  Hesitar: "Não devemos hesitar quando alguém precisa de ajuda.", Otimizar: "O novo aplicativo ajuda a otimizar a rotina de estudos.",
+  Ponderar: "Meu pai preferiu ponderar os riscos antes da viagem.", Poupar: "Apagar as luzes ajuda a poupar energia.",
+  Retaliar: "O jogador não quis retaliar depois da falta.", Romper: "Ela decidiu romper o acordo que já não era justo.",
+  Substituir: "Podemos substituir o açúcar por uma fruta na receita.",
+  Empatia: "A enfermeira demonstrou empatia com o paciente assustado.", Resiliência: "O atleta mostrou resiliência ao voltar a treinar depois da lesão.",
+  Procrastinação: "A procrastinação fez o prazo do projeto ficar apertado.", Assertividade: "Com assertividade, João recusou o convite sem ser grosseiro.",
+  Gratidão: "Ela sentiu gratidão por toda a ajuda que recebeu.", Autonomia: "O jovem ganhou autonomia para cuidar da própria rotina.",
+  Altruísta: "A médica teve uma atitude altruísta ao atender como voluntária.", Perspicaz: "O detetive foi perspicaz ao notar a pequena diferença.",
+  Conciso: "O aviso foi conciso e todos entenderam rapidamente.", Coerente: "Sua decisão foi coerente com aquilo que havia prometido.",
+  Efêmero: "O sucesso daquele vídeo foi efêmero e logo desapareceu.", Intrépido: "O explorador intrépido atravessou a floresta com coragem.",
+  Sutil: "O perfume tinha um aroma sutil de flores.", Versátil: "Aquela jogadora versátil atua em várias posições.",
+  Zelo: "O jardineiro tratou cada planta com zelo.", Propósito: "O projeto nasceu com o propósito de ajudar a comunidade."
+};
+
 const VERBS = new Set(["Antecipar", "Aprimorar", "Conceder", "Esclarecer", "Hesitar", "Otimizar", "Ponderar", "Poupar", "Retaliar", "Romper", "Substituir"]);
 const NOUNS = new Set(`Abundância,Alarde,Alicerce,Aliado,Âmago,Angústia,Ansiedade,Apatia,Apogeu,Arrogância,Assertividade,Astúcia,Auge,Autonomia,Autossabotagem,Bravura,Clareza,Clichê,Coincidência,Compaixão,Compreensão,Conflito,Consequência,Convicção,Curiosidade,Dedicação,Desapego,Desconfiança,Desconforto,Desespero,Desprezo,Destreza,Devoção,Dilema,Empatia,Empenho,Enigma,Entusiasmo,Estratégia,Euforia,Êxito,Expectativa,Foco,Gesto,Gratidão,Hábito,Harmonia,Hipótese,Honra,Humor,Identidade,Ilusão,Impacto,Ímpeto,Influência,Injustiça,Instinto,Introspecção,Intuição,Jornada,Julgamento,Lealdade,Legado,Lógica,Mágoa,Mérito,Motivação,Nostalgia,Nuança,Obstáculo,Orgulho,Ousadia,Pânico,Preconceito,Privilégio,Proatividade,Procrastinação,Propósito,Rancor,Receio,Reconhecimento,Redenção,Reflexão,Resiliência,Respeito,Ressalva,Revelação,Rigidez,Sarcasmo,Satisfação,Sugestão,Sussurro,Tensão,Traição,Transformação,Triunfo,Vingança,Virtude,Visão,Vislumbre,Zelo`.split(","));
 const MASCULINE_NOUNS = new Set(`Alarde,Alicerce,Aliado,Âmago,Apogeu,Auge,Clichê,Conflito,Desapego,Desconforto,Desespero,Desprezo,Dilema,Empenho,Enigma,Entusiasmo,Êxito,Foco,Gesto,Hábito,Humor,Impacto,Ímpeto,Instinto,Julgamento,Legado,Mérito,Obstáculo,Orgulho,Pânico,Preconceito,Privilégio,Propósito,Rancor,Receio,Reconhecimento,Respeito,Sarcasmo,Sussurro,Triunfo,Vislumbre,Zelo`.split(","));
 
-function naturalExample(word) {
+function naturalExample(word, index) {
   const lower = word.toLocaleLowerCase("pt-BR");
   if (VERBS.has(word)) return `Ela decidiu ${lower} sua atitude antes de continuar.`;
-  if (NOUNS.has(word)) return `${MASCULINE_NOUNS.has(word) ? "O" : "A"} ${lower} ficou evidente nas atitudes do personagem.`;
-  return `O personagem pareceu ${lower} durante toda a conversa.`;
+  const article = MASCULINE_NOUNS.has(word) ? "o" : "a";
+  if (NOUNS.has(word)) {
+    const templates = [`Todos perceberam ${article} ${lower} durante a conversa.`, `${article === "o" ? "O" : "A"} ${lower} influenciou a decisão daquele grupo.`, `A situação revelou ${article} ${lower} que ninguém havia notado.`];
+    return templates[index % templates.length];
+  }
+  const templates = [`A atitude foi considerada ${lower} por quem acompanhou o caso.`, `Durante a conversa, o comentário pareceu ${lower}.`, `Todos descreveram aquele momento como ${lower}.`];
+  return templates[index % templates.length];
 }
 
-const LUMINA_WORDS = WORD_NAMES.map((word) => {
+function secondNaturalExample(word, index) {
+  const lower = word.toLocaleLowerCase("pt-BR");
+  const article = MASCULINE_NOUNS.has(word) ? "o" : "a";
+  if (VERBS.has(word)) return `Naquela situação, foi importante ${lower} antes de tomar uma decisão.`;
+  if (NOUNS.has(word)) {
+    const templates = [`Naquele dia, ${article} ${lower} marcou a experiência da turma.`, `A família conversou sobre ${article} ${lower} durante o jantar.`, `A reportagem mostrou como ${article} ${lower} afetou a comunidade.`];
+    return templates[(index + 1) % templates.length];
+  }
+  const templates = [`“Achei esse resultado ${lower}”, comentou a estudante.`, `O professor apresentou um exemplo ${lower} durante a aula.`, `A notícia causou um efeito ${lower} em todos.`];
+  return templates[(index + 1) % templates.length];
+}
+
+const LUMINA_WORDS = WORD_NAMES.map((word, index) => {
   const known = DEFINITIONS[word];
   return {
     word,
     definition: known?.[0] || `Termo usado para expressar a ideia de ${word.toLowerCase()} em uma situação.`,
-    example: EXAMPLE_OVERRIDES[word] || naturalExample(word),
+    example: EXAMPLE_OVERRIDES[word] || naturalExample(word, index),
+    example2: SECOND_EXAMPLE_OVERRIDES[word] || secondNaturalExample(word, index),
     synonyms: known?.[1] || "termo semelhante, ideia próxima",
     antonyms: known?.[2] || ANTONYM_OVERRIDES[word] || "sem antônimo direto"
   };
