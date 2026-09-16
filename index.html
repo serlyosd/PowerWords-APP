@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#7457f5" />
+    <meta name="description" content="Lumina: uma missão diária para iluminar o vocabulário." />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <link rel="stylesheet" href="styles.css?v=1.3.0" />
+    <title>Lumina</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Lumina — início"><span class="brand-mark">✦</span>Lumina <small>v1.3.0</small></a>
+        <button class="icon-button" id="settingsButton" aria-label="Abrir configurações">⚙</button>
+      </header>
+
+      <main>
+        <section id="dashboardScreen" class="screen dashboard active" aria-labelledby="welcomeTitle">
+          <div class="welcome-copy">
+            <span class="eyebrow">SUA JORNADA DE PALAVRAS</span>
+            <h1 id="welcomeTitle">Olá, Bia! <span>☀️</span></h1>
+            <p>Pronta para iluminar sua mente hoje?</p>
+          </div>
+
+          <div class="streak-card">
+            <div class="progress-ring" id="progressRing" role="img" aria-label="0 de 5 dias concluídos">
+              <div class="progress-center"><strong id="streakNumber">0</strong><span>de 5 dias</span></div>
+            </div>
+            <div>
+              <span class="status-pill">🔥 CICLO ATUAL</span>
+              <h2 id="streakMessage">Sua luz começa hoje</h2>
+              <p id="streakHint">Complete 5 dias seguidos para liberar o Ticket Dourado.</p>
+            </div>
+          </div>
+
+          <div class="master-summary" id="masterSummary">
+            <span class="master-shield">◆</span>
+            <div><span class="eyebrow">MASTER CONFIGURADO</span><strong id="rewardName">Recompensa surpresa</strong><small id="cycleStatus">Ciclo ativo desde hoje</small></div>
+            <span class="verified-mark" aria-label="Configuração confirmada">✓</span>
+          </div>
+
+          <button class="master-button" id="masterAreaButton"><span>◆</span><span><strong>Área do Master</strong><small>Reiniciar o treino para apresentação</small></span><b>›</b></button>
+
+          <button class="primary-button" id="startButton"><span>Iniciar Missão do Dia</span><b>→</b></button>
+          <p class="mission-meta"><span>✦</span> 21 palavras &nbsp;•&nbsp; aproximadamente 7 minutos</p>
+
+          <div class="week-card">
+            <div class="section-heading"><div><span class="eyebrow">SEU RITMO</span><h2>Últimos 5 dias</h2></div><span id="weekScore">0/5</span></div>
+            <div class="day-row" id="dayRow"></div>
+          </div>
+          <div class="version-panel"><span>Versão instalada: <strong>1.3.0</strong></span><button type="button" id="updateButton">Buscar atualização</button></div>
+        </section>
+
+        <section id="studyScreen" class="screen study" aria-labelledby="studyWord">
+          <div class="study-header">
+            <button class="icon-button" id="closeStudy" aria-label="Sair da missão">✕</button>
+            <div class="session-progress"><div><span>MISSÃO DE HOJE</span><strong id="cardCount">1 de 21</strong></div><div class="progress-track"><span id="sessionProgress"></span></div></div>
+            <span class="study-spacer" aria-hidden="true"></span>
+          </div>
+
+          <p class="tap-hint" id="tapHint">Toque na carta para revelar</p>
+          <div class="flashcard" id="flashcard" role="button" tabindex="0" aria-label="Virar carta">
+            <div class="card-face card-front"><span class="front-instruction">FALE A PALAVRA EM VOZ ALTA</span><span class="sparkle">✦</span><strong id="studyWord">Palavra</strong><small>TOQUE PARA DESCOBRIR</small></div>
+            <div class="card-face card-back"><span class="eyebrow">SIGNIFICADO</span><strong id="cardWord">Palavra</strong><p class="definition" id="definition"></p><button type="button" class="listen-button" id="cardSpeakButton">🔊 Ouvir 2 vezes</button><div class="example-box"><span>NA PRÁTICA</span><p id="example"></p><p id="example2"></p></div><div class="word-relations"><div><span class="relation-label">SINÔNIMOS</span><p id="synonyms"></p></div><div><span class="relation-label antonym-label">ANTÔNIMOS</span><p id="antonyms"></p></div></div></div>
+          </div>
+
+          <div class="study-navigation">
+            <button type="button" id="previousCard" class="nav-button">← Anterior</button>
+            <button type="button" id="confirmCard" class="confirm-word">Entendi esta palavra ✓</button>
+            <button type="button" id="nextCard" class="nav-button">Próxima →</button>
+          </div>
+        </section>
+
+        <section id="summaryScreen" class="screen summary-screen" aria-labelledby="summaryTitle">
+          <span class="eyebrow">REVISÃO FINAL</span><h1 id="summaryTitle">Suas 21 palavras</h1>
+          <p>Revise os conceitos e sinônimos antes do Quiz.</p>
+          <div class="summary-list" id="summaryList"></div>
+          <div class="summary-actions"><button class="text-nav" id="backToCards">← Voltar aos cards</button><button class="primary-button" id="startQuizButton"><span>Estou pronta para o Quiz</span><b>→</b></button></div>
+        </section>
+
+        <section id="quizScreen" class="screen quiz-screen" aria-labelledby="quizTitle">
+          <span class="eyebrow">QUIZ DO DIA</span><div class="quiz-heading"><h1 id="quizTitle">Qual é a palavra?</h1><strong id="quizCount">1 de 21</strong></div>
+          <div class="progress-track"><span id="quizProgress"></span></div>
+          <div class="quiz-card"><p>Qual palavra corresponde a este conceito?</p><h2 id="quizDefinition"></h2></div>
+          <div class="quiz-options" id="quizOptions"></div>
+          <p class="quiz-note">O resultado será mostrado somente ao final.</p>
+        </section>
+
+        <section id="resultScreen" class="screen result" aria-labelledby="resultTitle">
+          <div class="confetti" id="resultConfetti" aria-hidden="true"></div>
+          <div class="result-icon" id="resultIcon">😊</div>
+          <span class="eyebrow">MISSÃO CONCLUÍDA</span>
+          <h1 id="resultTitle">Mandou muito bem!</h1>
+          <p id="resultCopy"></p>
+          <div class="result-score"><strong id="quizScore">0/21</strong><span id="quizPercent">0% de acertos</span></div>
+          <div class="review-needed" id="reviewNeeded"></div>
+          <button class="primary-button" id="finishButton"><span>Voltar ao início</span><b>→</b></button>
+        </section>
+
+        <section id="rewardScreen" class="screen reward" aria-labelledby="rewardTitle">
+          <div class="confetti" id="confetti" aria-hidden="true"></div>
+          <div class="gold-ticket">
+            <span class="ticket-star">★</span><span class="eyebrow">TICKET DOURADO</span>
+            <h1 id="rewardTitle">Você desbloqueou a Recompensa!</h1>
+            <p>Leve o celular até o Master para validação.</p>
+            <button class="gold-button" id="validateButton">Validar com o Master</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="settingsDialog">
+      <form method="dialog" class="modal-card" id="settingsForm">
+        <button class="modal-close" value="cancel" aria-label="Fechar">✕</button>
+        <span class="eyebrow">CONFIGURAÇÕES</span><h2>Personalizar Lumina</h2>
+        <label>Nome da estudante<input id="studentName" maxlength="20" autocomplete="off" /></label>
+        <label>Prêmio combinado<input id="settingsReward" maxlength="60" autocomplete="off" /></label>
+        <label>PIN atual do Master<input id="currentMasterPin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="Obrigatório para salvar" required /></label>
+        <label>Novo PIN <small>(deixe vazio para manter)</small><input id="masterPin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="4 dígitos" /></label>
+        <button class="primary-button compact" value="save">Salvar</button>
+        <button class="text-button" type="button" id="resetData">Reiniciar todo o progresso</button>
+      </form>
+    </dialog>
+
+    <dialog id="onboardingDialog">
+      <form class="modal-card onboarding-card" id="onboardingForm">
+        <span class="setup-icon">◆</span><span class="eyebrow">CONFIGURAÇÃO DO MASTER</span>
+        <h2>Vamos ativar o primeiro ciclo</h2>
+        <p>O responsável configura o prêmio e cria o PIN usado para validar a conquista.</p>
+        <label>Nome da estudante<input id="setupName" maxlength="20" value="Bia" required /></label>
+        <label>Prêmio após 5 dias<input id="setupReward" maxlength="60" placeholder="Ex.: escolher o filme de sábado" required /></label>
+        <div class="pin-fields"><label>Crie o PIN<input id="setupPin" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="4 números" required /></label><label>Confirme o PIN<input id="setupPinConfirm" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="Repita" required /></label></div>
+        <p class="form-error" id="setupError" role="alert"></p>
+        <button class="primary-button compact">Ativar primeiro ciclo</button>
+      </form>
+    </dialog>
+
+    <dialog id="setupSuccessDialog">
+      <form method="dialog" class="modal-card success-card">
+        <span class="success-check">✓</span><span class="eyebrow">TUDO PRONTO</span><h2>Master configurado!</h2>
+        <p><strong>21 palavras por dia</strong>, pelo menos <strong>17 fáceis</strong> e <strong>5 dias consecutivos</strong> para conquistar:</p>
+        <div class="reward-confirmation" id="rewardConfirmation"></div>
+        <button class="primary-button compact">Começar o ciclo</button>
+      </form>
+    </dialog>
+
+    <dialog id="pinDialog">
+      <form method="dialog" class="modal-card" id="pinForm">
+        <button class="modal-close" value="cancel" aria-label="Fechar">✕</button>
+        <span class="eyebrow">ÁREA DO MASTER</span><h2>Validar recompensa</h2>
+        <p>Digite o PIN de 4 dígitos para encerrar este ciclo.</p>
+        <input id="pinAttempt" class="pin-input" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" aria-label="PIN do Master" required />
+        <p class="form-error" id="pinError" role="alert"></p>
+        <button class="gold-button" value="validate">Entregar prêmio e iniciar novo ciclo</button>
+      </form>
+    </dialog>
+
+    <dialog id="resetDialog">
+      <form class="modal-card" id="resetForm">
+        <button class="modal-close" type="button" id="closeReset" aria-label="Fechar">✕</button>
+        <span class="eyebrow">ÁREA DO MASTER</span><h2>Reiniciar para apresentar</h2>
+        <p>Isso apagará o treino de hoje e abrirá novamente a configuração inicial.</p>
+        <label>PIN atual do Master<input id="resetPin" class="pin-input" type="password" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" aria-label="PIN atual do Master" required /></label>
+        <p class="form-error" id="resetError" role="alert"></p>
+        <button class="danger-button" type="submit">Apagar treino e recomeçar</button>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="words.js?v=1.3.0"></script>
+    <script src="app.js?v=1.3.0"></script>
+  </body>
+</html>
